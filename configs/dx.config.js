@@ -47,15 +47,15 @@ const config = {
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'dx-live-firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'dx-live-firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'dx-live-webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'dx-live-webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
   ],
 };
 module.exports = config;

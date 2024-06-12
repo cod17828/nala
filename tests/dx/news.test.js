@@ -139,4 +139,33 @@ test.describe('Validate news block', () => {
       await expect(parseInt(resultAfterClearingAllFilters.split(' ')[0], 10)).toBeGreaterThan(6);
     });
   });
+
+  test(`${features[3].name},${features[3].tags}`, async ({ page, baseURL }) => {
+    await test.step('Click Sign In', async () => {
+      await page.goto(`${baseURL}${features[0].path}`);
+      await newsPage.signInButton.click();
+      await page.waitForLoadState('networkidle');
+    });
+
+    await test.step('Click Sign In', async () => {
+      await newsPage.IMSEmailPage.waitFor({ state: 'visible', timeout: 5000 });
+      // await newsPage.emailField.fill(process.env.IMS_EMAIL);
+      await newsPage.emailField.fill('yugo-stage-spp-platinum@yopmail.com');
+      await newsPage.emailPageContinueButton.click();
+      await page.waitForLoadState('domcontentloaded');
+      await newsPage.IMSPasswordPage.waitFor({ state: 'visible', timeout: 10000 });
+      // await newsPage.passwordField.fill(process.env.IMS_PASS);
+      await newsPage.passwordField.fill('Test@123');
+      await newsPage.passwordPageContinueButton.click();
+      await page.waitForLoadState('domcontentloaded');
+    });
+
+    await test.step('Verify successfull login', async () => {
+      await newsPage.profileIconButton.click();
+      const userName = await newsPage.profileName.textContent();
+      await expect(userName).toBe('Yugo-SPP-Stage Platinum');
+    });
+
+    // TODO: logout
+  });
 });
