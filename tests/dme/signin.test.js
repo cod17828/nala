@@ -30,6 +30,8 @@ test.describe('MAPC sign in flow', () => {
     });
 
     await test.step('Logout', async () => {
+      await page.waitForLoadState('domcontentloaded');
+
       await signInPage.profileIconButton.click();
       await signInPage.logoutButton.click();
     });
