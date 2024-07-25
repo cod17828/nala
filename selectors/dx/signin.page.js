@@ -20,7 +20,7 @@ export default class SignInPage {
 
   async signIn(page, partnerLevel) {
     const email = process.env.IMS_EMAIL.split(partnerLevel)[1].split(';')[0];
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     await this.emailField.fill(email);
     await this.emailPageContinueButton.click();
     await this.passwordField.fill(process.env.IMS_PASS);
