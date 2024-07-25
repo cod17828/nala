@@ -53,6 +53,7 @@ test.describe('MAPC sign in flow', () => {
         newTab,
         newTabPage,
         feature,
+        signInPage,
       });
     });
   });
