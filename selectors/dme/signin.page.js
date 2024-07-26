@@ -26,12 +26,11 @@ export default class SignInPage {
     page, expect, newTab, newTabPage, feature, signInPage, context,
   }) {
       const url = `${feature.baseURL}`;
-      await page.evaluate((navigationUrl) => {
-        window.location.href = navigationUrl;
-      }, url);
-
+      // await page.evaluate((navigationUrl) => {
+      //   window.location.href = navigationUrl;
+      // }, url);
+      await page.goto(url);
       await page.waitForLoadState('domcontentloaded');
-      console.log('ppra', page.url(), await page.locator('.feds-navList.feds-relativePosition').innerHTML());
       await page.locator('.universal-nav-container').waitFor({ state: 'visible', timeout: 25000 })
       await signInPage.signInButtonStageAdobe.waitFor({ state: 'visible', timeout: 25000 })
       await signInPage.signInButtonStageAdobe.click();
