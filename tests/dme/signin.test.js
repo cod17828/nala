@@ -50,7 +50,6 @@ test.describe('MAPC sign in flow', () => {
       const newTabPage = new SignInPage(newTab);
       await signInPage.verifyRedirectAfterLogin({
         page,
-        test,
         expect,
         newTab,
         newTabPage,

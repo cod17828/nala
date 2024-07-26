@@ -23,9 +23,8 @@ export default class SignInPage {
   }
 
   async verifyRedirectAfterLogin({
-    page, test, expect, newTab, newTabPage, feature, signInPage,
+    page, expect, newTab, newTabPage, feature, signInPage,
   }) {
-    await test.step('Go to stage.adobe.com', async () => {
       const url = `${feature.baseURL}`;
       await page.evaluate((navigationUrl) => {
         window.location.href = navigationUrl;
@@ -34,19 +33,14 @@ export default class SignInPage {
       await page.waitForLoadState('domcontentloaded');
       await signInPage.signInButtonStageAdobe.waitFor({ state: 'visible', timeout: 25000 })
       await signInPage.signInButtonStageAdobe.click();
-    });
 
-    await test.step('Sign in with cpp spain platinum user', async () => {
       await this.signIn(page, `${feature.data.partnerLevel}`);
       await signInPage.userNameDisplay.waitFor({ state: 'visible', timeout: 20000 });
-    });
 
-    await test.step(`Open ${feature.data.page} in a new tab`, async () => {
       await newTab.goto(`${feature.path}`);
       await newTabPage.profileIconButton.waitFor({ state: 'visible', timeout: 20000 });
       const pages = await page.context().pages();
       await expect(pages[1].url())
         .toContain(`${feature.data.expectedToSeeInURL}`);
-    });
   }
 }
