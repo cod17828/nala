@@ -17,7 +17,7 @@ test.describe('MAPC sign in flow', () => {
       await page.goto(`${features[0].path}`);
       await page.waitForLoadState('domcontentloaded');
       console.log("curtain", await page.locator('.modal-curtain').isVisible());
-      if (await page.locator('.modal-curtain').isVisible()) {
+      if (await page.locator('.modal-curtain')) {
         await page.locator('.modal-curtain').evaluate((element) => {
           element.style.display = 'none';
         });
