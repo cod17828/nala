@@ -16,6 +16,13 @@ test.describe('MAPC sign in flow', () => {
     await test.step('Go to the home page', async () => {
       await page.goto(`${features[0].path}`);
       await page.waitForLoadState('domcontentloaded');
+      console.log("curtain", await page.locator('.modal-curtain').isVisible());
+      if (await page.locator('.modal-curtain').isVisible()) {
+        await page.locator('.modal-curtain').evaluate((element) => {
+          element.style.display = 'none';
+        });
+      }
+      await signInPage.signInButton.waitFor({ state: 'visible', timeout: 20000 });
       await signInPage.signInButton.click();
     });
 
@@ -24,6 +31,12 @@ test.describe('MAPC sign in flow', () => {
     });
 
     await test.step('Verify redirection to restricted home after successful login', async () => {
+      console.log("curtain", await page.locator('.modal-curtain').isVisible());
+      if (await page.locator('.modal-curtain').isVisible()) {
+        await page.locator('.modal-curtain').evaluate((element) => {
+          element.style.display = 'none';
+        });
+      }
       await signInPage.profileIconButton.waitFor({ state: 'visible', timeout: 20000 });
       const pages = await page.context().pages();
       await expect(pages[0].url()).toContain(`${features[0].data.expectedProtectedHomeURL}`);

@@ -41,6 +41,7 @@ export default class SignInPage {
       await context.pages()[1].bringToFront();
 
       await newTab.goto(`${feature.path}`);
+      await newTab.waitForLoadState('domcontentloaded');
       await newTabPage.profileIconButton.waitFor({ state: 'visible', timeout: 20000 });
       const pages = await page.context().pages();
       await expect(pages[1].url())
