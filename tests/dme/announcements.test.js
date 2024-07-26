@@ -7,7 +7,7 @@ let signInPage;
 const Announcements = require('../../features/dme/announcements.spec.js');
 
 const { features } = Announcements;
-const regionCases = features.slice(0, 2);
+const regionCases = features.slice(0, 12);
 
 test.describe('Validate announcements block', () => {
   test.beforeEach(async ({ page }) => {
@@ -29,6 +29,7 @@ test.describe('Validate announcements block', () => {
 
       await test.step(`Verify card titled ${feature.data.announcementCardTitle} is present on page`, async () => {
         await announcementsPage.searchField.fill(`${feature.data.announcementCardTitle}`);
+        await announcementsPage.firstCardTitle.waitFor({ state: 'visible', timeout: 10000 });
         const result = await announcementsPage.resultNumber.textContent();
         await expect(parseInt(result.split(' ')[0], 10)).toBe(1);
       });
