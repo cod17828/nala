@@ -32,6 +32,7 @@ export default class SignInPage {
       }, url);
 
       await page.waitForLoadState('domcontentloaded');
+      await signInPage.signInButtonStageAdobe.waitFor({ state: 'visible', timeout: 25000 })
       await signInPage.signInButtonStageAdobe.click();
     });
 
