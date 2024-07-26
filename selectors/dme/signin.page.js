@@ -30,8 +30,9 @@ export default class SignInPage {
         window.location.href = navigationUrl;
       }, url);
 
-    await page.waitForLoadState('domcontentloaded');
-    await page.locator('.universal-nav-container').waitFor({ state: 'visible', timeout: 25000 })
+      await page.waitForLoadState('domcontentloaded');
+      console.log('ppra', page.url(), await page.locator('.feds-navList.feds-relativePosition').innerHTML());
+      await page.locator('.universal-nav-container').waitFor({ state: 'visible', timeout: 25000 })
       await signInPage.signInButtonStageAdobe.waitFor({ state: 'visible', timeout: 25000 })
       await signInPage.signInButtonStageAdobe.click();
 
