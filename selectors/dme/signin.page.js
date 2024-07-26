@@ -23,7 +23,7 @@ export default class SignInPage {
   }
 
   async verifyRedirectAfterLogin({
-    page, expect, newTab, newTabPage, feature, signInPage,
+    page, expect, newTab, newTabPage, feature, signInPage, context,
   }) {
       const url = `${feature.baseURL}`;
       await page.evaluate((navigationUrl) => {
@@ -36,6 +36,8 @@ export default class SignInPage {
 
       await this.signIn(page, `${feature.data.partnerLevel}`);
       await signInPage.userNameDisplay.waitFor({ state: 'visible', timeout: 20000 });
+
+      await context.pages()[1].bringToFront();
 
       await newTab.goto(`${feature.path}`);
       await newTabPage.profileIconButton.waitFor({ state: 'visible', timeout: 20000 });
