@@ -4,8 +4,12 @@ module.exports = {
     {
       tcid: '1',
       name: '@desc-regression-announcements',
-      path: '/channelpartners/drafts/automation/regression/announcements',
-      tags: '@dme @regression',
+      path: 'https://partners.stage.adobe.com/channelpartners/drafts/automation/regression/announcements',
+      tags: '@dme-announcements @regression @login @nopr',
+      data: {
+        partnerLevel: 'cpp-distributor-japan:',
+        announcementCardTitle: 'CPP Distributor Japan Announcement',
+      },
     },
   ],
 };
