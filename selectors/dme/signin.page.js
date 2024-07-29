@@ -31,7 +31,6 @@ export default class SignInPage {
       // }, url);
       await page.goto(url);
       await page.waitForLoadState('domcontentloaded');
-      await page.locator('.universal-nav-container').waitFor({ state: 'visible', timeout: 25000 })
       await signInPage.signInButtonStageAdobe.waitFor({ state: 'visible', timeout: 25000 })
       await signInPage.signInButtonStageAdobe.click();
 
