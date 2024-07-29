@@ -32,9 +32,9 @@ export default class SignInPage {
       await page.goto(url);
       console.log('url', url);
       await page.waitForLoadState('domcontentloaded');
-    await this.page.waitForTimeout(30000);
-    console.log('ssss', await page.locator('#gnt_755_1').innerHTML());
-    await signInPage.signInButtonStageAdobe.click();
+      await page.waitForTimeout(5000);
+      console.log('ssss', await page.locator('#gnt_755_1').innerHTML());
+      await signInPage.signInButtonStageAdobe.click();
 
       await this.signIn(page, `${feature.data.partnerLevel}`);
       await signInPage.userNameDisplay.waitFor({ state: 'visible', timeout: 20000 });
