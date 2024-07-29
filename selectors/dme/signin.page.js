@@ -32,7 +32,10 @@ export default class SignInPage {
       await page.goto(url);
       console.log('url', url);
       await page.waitForLoadState('domcontentloaded');
-      await page.locator('.feds-navList-wrapper .feds-navList').nth(2).waitFor({ state: 'visible', timeout: 25000 })
+      await page.locator('.feds-navList-wrapper .feds-navList').nth(2).waitFor({ state: 'visible', timeout: 25000 });
+      await page.locator('#gnt_11_1').waitFor({ state: 'visible', timeout: 25000 });
+      await page.locator('#universal-nav').waitFor({ state: 'visible', timeout: 25000 });
+      await page.locator('.profile-signed-out').waitFor({ state: 'visible', timeout: 25000 });
       await signInPage.signInButtonStageAdobe.click();
 
       await this.signIn(page, `${feature.data.partnerLevel}`);
