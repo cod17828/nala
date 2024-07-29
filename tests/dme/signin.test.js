@@ -44,7 +44,11 @@ test.describe('MAPC sign in flow', () => {
 
     await test.step('Logout', async () => {
       await page.waitForLoadState('domcontentloaded');
-
+      if (await page.locator('.modal-curtain').isVisible()) {
+        await page.locator('.modal-curtain').evaluate((element) => {
+          element.style.display = 'none';
+        });
+      }
       await signInPage.profileIconButton.click();
       await signInPage.logoutButton.click();
     });
