@@ -34,7 +34,9 @@ export default class SignInPage {
       await page.waitForLoadState('domcontentloaded');
       await page.locator('.feds-navList-wrapper .feds-navList').nth(2).waitFor({ state: 'visible', timeout: 25000 });
       await page.locator('#gnt_11_1').waitFor({ state: 'visible', timeout: 25000 });
-      await page.locator('#universal-nav').waitFor({ state: 'visible', timeout: 25000 });
+      await page.locator('#gnt_755').waitFor({ state: 'visible', timeout: 25000 });
+      await page.locator('#gnt_755_1').waitFor({ state: 'visible', timeout: 25000 });
+      await page.locator('.universal-nav-container').waitFor({ state: 'visible', timeout: 25000 });
       await page.locator('.profile-signed-out').waitFor({ state: 'visible', timeout: 25000 });
       await signInPage.signInButtonStageAdobe.click();
 
