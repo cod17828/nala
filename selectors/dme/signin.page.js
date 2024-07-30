@@ -30,7 +30,13 @@ export default class SignInPage {
       await page.waitForLoadState('domcontentloaded');
       await page.waitForTimeout(5000);
       console.log('ssss', await page.locator('#gnt_755_1').innerHTML());
-      const hasChildren = await page.locator('#gnt_769').evaluate(el => el.children.length > 0);
+      await page.locator('#gnt_769').waitFor({ state: 'visible', timeout: 20000 });
+      await page.waitForTimeout(5000);
+      await page.locator('.universal-nav-container').waitFor({ state: 'visible', timeout: 20000 });
+      await page.waitForTimeout(5000);
+      await page.locator('#universal-nav').waitFor({ state: 'visible', timeout: 20000 });
+      await page.waitForTimeout(5000);
+      await page.locator('#unav-profile').waitFor({ state: 'visible', timeout: 20000 });
       await signInPage.signInButtonStageAdobe.click();
 
       await this.signIn(page, `${feature.data.partnerLevel}`);
