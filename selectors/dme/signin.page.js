@@ -26,14 +26,11 @@ export default class SignInPage {
     page, expect, newTab, newTabPage, feature, signInPage, context,
   }) {
       const url = `${feature.baseURL}`;
-      // await page.evaluate((navigationUrl) => {
-      //   window.location.href = navigationUrl;
-      // }, url);
       await page.goto(url);
-      console.log('url', url);
       await page.waitForLoadState('domcontentloaded');
       await page.waitForTimeout(5000);
       console.log('ssss', await page.locator('#gnt_755_1').innerHTML());
+      const hasChildren = await page.locator('#gnt_769').evaluate(el => el.children.length > 0);
       await signInPage.signInButtonStageAdobe.click();
 
       await this.signIn(page, `${feature.data.partnerLevel}`);
