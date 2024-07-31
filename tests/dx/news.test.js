@@ -227,7 +227,7 @@ test.describe('Validate news block', () => {
 
   test(`${features[5].name},${features[5].tags}`, async ({ page, context, baseURL }) => {
     await test.step('Click Sign In', async () => {
-      console.log('useri', process.env.IMS_EMAIL.contains('spp-platinum'));
+      console.log('useri', process.env.IMS_EMAIL.includes('spp-platinum'));
       await page.goto(`${baseURL}${features[5].path}`);
       await page.waitForLoadState('domcontentloaded');
       await page.waitForResponse('**/chimera-api/collection?**');
