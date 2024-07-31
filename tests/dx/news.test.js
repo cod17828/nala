@@ -219,21 +219,25 @@ test.describe('Validate news block', () => {
     });
   });
 
-  test(`${features[5].name},${features[5].tags}`, async ({ page }) => {
+  test(`${features[5].name},${features[5].tags}`, async ({ page, context, baseURL }) => {
     await test.step('Click Sign In', async () => {
-      await page.goto(`${features[5].path}`);
+      console.log('useri', process.env.IMS_EMAIL);
+      console.log('envsinfo', process.env);
+      await page.goto(`${baseURL}${features[5].path}`);
       await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 10000 });
       const result = await newsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(9);
       await newsPage.searchField.fill('Automation regression news card spp platinum no1');
       const resultPlatinum = await newsPage.resultNumber.textContent();
       await expect(parseInt(resultPlatinum.split(' ')[0], 10)).toBe(0);
-      await newsPage.signInButton.click();
+      await context.addCookies([{
+        name: 'partner_data',
+        value: '{"SPP":{"company":"Platinum_user"%2C"firstName":"Yugo-SPP-Stage"%2C"lastName"'
+        + ':"Platinum"%2C"level":"Platinum"%2C"status":"MEMBER"}}',
+        url: 'https://stage--dx-partners--adobecom.hlx.live/solutionpartners/drafts/automation/regression/partner-news',
+      }]);
+      await page.reload();
       await page.waitForLoadState('domcontentloaded');
-    });
-
-    await test.step('I load the news page', async () => {
-      await signInPage.signIn(page, `${features[5].data.partnerLevel}`);
     });
 
     await test.step('Find platinum automation regression cards', async () => {

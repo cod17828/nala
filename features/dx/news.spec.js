@@ -35,8 +35,8 @@ module.exports = {
     {
       tcid: '6',
       name: '@login-news-page-platinum-user',
-      path: 'https://partners.stage.adobe.com/solutionpartners/drafts/automation/regression/partner-news',
-      tags: '@dx-news @regression @login @nopr',
+      path: '/solutionpartners/drafts/automation/regression/partner-news',
+      tags: '@dx-news @regression @anonymous',
       data: {
         partnerLevel: 'spp-platinum:',
         expectedToSeeInURL: '/solutionpartners/drafts/'
