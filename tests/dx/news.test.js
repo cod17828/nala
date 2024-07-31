@@ -17,7 +17,7 @@ test.describe('Validate news block', () => {
   async function findCardsForPartnerLevel(page, path, cardPartnerLevel, partnerLevel, resultTotal, cardLevelAbove) {
     await test.step('Click Sign In', async () => {
       await page.goto(path);
-      await page.waitForLoadState('domcontentloaded');
+      await page.waitForResponse('**/chimera-api/collection?**');
       await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const result = await newsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(9);
@@ -49,7 +49,7 @@ test.describe('Validate news block', () => {
     await test.step('Go to News page', async () => {
       console.log('url: ', baseURL + features[0].path);
       await page.goto(`${baseURL}${features[0].path}`);
-      await page.waitForLoadState('domcontentloaded');
+      await page.waitForResponse('**/chimera-api/collection?**');
       await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const result = await newsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(9);
@@ -89,7 +89,7 @@ test.describe('Validate news block', () => {
   test(`${features[1].name},${features[1].tags}`, async ({ page, baseURL }) => {
     await test.step('Go to News page', async () => {
       await page.goto(`${baseURL}${features[1].path}`);
-      await page.waitForLoadState('domcontentloaded');
+      await page.waitForResponse('**/chimera-api/collection?**');
       await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const result = await newsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(9);
@@ -123,7 +123,7 @@ test.describe('Validate news block', () => {
   test(`${features[2].name},${features[2].tags}`, async ({ page, baseURL }) => {
     await test.step('Go to News page', async () => {
       await page.goto(`${baseURL}${features[2].path}`);
-      await page.waitForLoadState('domcontentloaded');
+      await page.waitForResponse('**/chimera-api/collection?**');
       await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const result = await newsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(9);
@@ -197,7 +197,7 @@ test.describe('Validate news block', () => {
   test(`${features[4].name},${features[4].tags}`, async ({ page, baseURL }) => {
     await test.step('Go to News page', async () => {
       await page.goto(`${baseURL}${features[4].path}`);
-      await page.waitForLoadState('domcontentloaded');
+      await page.waitForResponse('**/chimera-api/collection?**');
       await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const result = await newsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(9);
@@ -227,10 +227,10 @@ test.describe('Validate news block', () => {
 
   test(`${features[5].name},${features[5].tags}`, async ({ page, context, baseURL }) => {
     await test.step('Click Sign In', async () => {
-      console.log('useri', process.env.IMS_EMAIL);
-      console.log('envsinfo', process.env);
+      console.log('useri', process.env.IMS_EMAIL.contains('spp-platinum'));
       await page.goto(`${baseURL}${features[5].path}`);
       await page.waitForLoadState('domcontentloaded');
+      await page.waitForResponse('**/chimera-api/collection?**');
       await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const result = await newsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(9);
@@ -245,6 +245,7 @@ test.describe('Validate news block', () => {
       }]);
       await page.reload();
       await page.waitForLoadState('domcontentloaded');
+      await page.waitForResponse('**/chimera-api/collection?**');
     });
 
     await test.step('Find platinum automation regression cards', async () => {
