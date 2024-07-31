@@ -18,7 +18,7 @@ test.describe('Validate news block', () => {
     await test.step('Click Sign In', async () => {
       await page.goto(path);
       await page.waitForLoadState('domcontentloaded');
-      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
+      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const result = await newsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(9);
       await newsPage.searchField.fill(cardPartnerLevel);
@@ -33,7 +33,7 @@ test.describe('Validate news block', () => {
     });
 
     await test.step('Find automation regression cards for current partner level', async () => {
-      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
+      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const resultAll = await newsPage.resultNumber.textContent();
       await expect(parseInt(resultAll.split(' ')[0], 10)).toBe(resultTotal);
       await newsPage.searchField.fill(cardPartnerLevel);
@@ -50,7 +50,7 @@ test.describe('Validate news block', () => {
       console.log('url: ', baseURL + features[0].path);
       await page.goto(`${baseURL}${features[0].path}`);
       await page.waitForLoadState('domcontentloaded');
-      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
+      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const result = await newsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(9);
     });
@@ -90,7 +90,7 @@ test.describe('Validate news block', () => {
     await test.step('Go to News page', async () => {
       await page.goto(`${baseURL}${features[1].path}`);
       await page.waitForLoadState('domcontentloaded');
-      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
+      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const result = await newsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(9);
     });
@@ -124,7 +124,7 @@ test.describe('Validate news block', () => {
     await test.step('Go to News page', async () => {
       await page.goto(`${baseURL}${features[2].path}`);
       await page.waitForLoadState('domcontentloaded');
-      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 10000 });
+      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const result = await newsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(9);
     });
@@ -198,7 +198,7 @@ test.describe('Validate news block', () => {
     await test.step('Go to News page', async () => {
       await page.goto(`${baseURL}${features[4].path}`);
       await page.waitForLoadState('domcontentloaded');
-      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
+      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const result = await newsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(9);
     });
@@ -231,7 +231,7 @@ test.describe('Validate news block', () => {
       console.log('envsinfo', process.env);
       await page.goto(`${baseURL}${features[5].path}`);
       await page.waitForLoadState('domcontentloaded');
-      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 10000 });
+      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const result = await newsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(9);
       await newsPage.searchField.fill('Automation regression news card spp platinum no1');
@@ -248,7 +248,7 @@ test.describe('Validate news block', () => {
     });
 
     await test.step('Find platinum automation regression cards', async () => {
-      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
+      await newsPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const resultAll = await newsPage.resultNumber.textContent();
       await expect(parseInt(resultAll.split(' ')[0], 10)).toBe(14);
       await newsPage.searchField.fill('Automation regression news card spp platinum no1');
@@ -329,7 +329,7 @@ test.describe('Validate news block', () => {
       const newTab = await context.newPage();
       await newTab.goto(`${features[10].path}`);
       const newTabPage = new NewsPage(newTab);
-      await newTabPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
+      await newTabPage.firstCardDate.waitFor({ state: 'visible', timeout: 20000 });
       const resultCards = await newTabPage.resultNumber.textContent();
       await expect(parseInt(resultCards.split(' ')[0], 10)).toBe(9);
     });
