@@ -4,16 +4,11 @@ export default class SignInPage {
     this.signInButton = page.locator('button[daa-ll="Sign In"].feds-signIn');
     this.signInButtonStageAdobe = page.locator('.profile-comp.secondary-button');
     this.profileIconButton = page.locator('.feds-profile-button');
-    this.joinNowButton = page.locator('a:has-text("Join now")');
-    this.explorePastArticles = page.locator('a:has-text("Explore past articles")');
-    this.newsletterLink = page.locator('a:has-text("product newsletter")');
-    this.logoutButton = page.locator('[daa-ll="Sign Out"]');
     this.userNameDisplay = page.locator('.user-name');
+    this.logoutButton = page.locator('[daa-ll="Sign Out"]');
 
-    this.IMSEmailPage = page.locator('form#EmailForm');
     this.emailField = page.locator('#EmailPage-EmailField');
     this.emailPageContinueButton = page.locator('//button[@data-id="EmailPage-ContinueButton"]');
-    this.IMSPasswordPage = page.locator('form#PasswordForm');
     this.passwordField = page.locator('#PasswordPage-PasswordField');
     this.passwordPageContinueButton = page.locator('//button[@data-id="PasswordPage-ContinueButton"]');
   }
@@ -27,13 +22,21 @@ export default class SignInPage {
     await this.passwordPageContinueButton.click();
   }
 
-  async verifyLandingPageAfterLogin({ page, expect, path, partnerLevel, expectedLandingPageURL }) {
-    await page.goto(path);
-    await page.waitForLoadState('domcontentloaded');
-    await this.signInButton.click();
-    await this.signIn(page, partnerLevel);
-    await this.profileIconButton.waitFor({ state: 'visible', timeout: 20000 });
+  async verifyRedirectAfterLogin({
+    page, expect, newTab, newTabPage, baseURL, partnerLevel, path, expectedToSeeInURL,
+  }) {
+    const url = `${baseURL}`;
+    await page.evaluate((navigationUrl) => {
+      window.location.href = navigationUrl;
+    }, url);
+
+    await this.signInButtonStageAdobe.click();
+    await this.signIn(page, `${partnerLevel}`);
+    await this.userNameDisplay.waitFor({ state: 'visible', timeout: 20000 });
+    await newTab.goto(`${path}`);
+    await newTabPage.profileIconButton.waitFor({ state: 'visible', timeout: 20000 });
     const pages = await page.context().pages();
-    await expect(pages[0].url()).toContain(expectedLandingPageURL);
+    await expect(pages[1].url())
+      .toContain(`${expectedToSeeInURL}`);
   }
 }
