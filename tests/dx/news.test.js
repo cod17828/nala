@@ -25,26 +25,9 @@ test.describe('Validate news block', () => {
       const resultCardPartnerLevel = await newsPage.resultNumber.textContent();
       await expect(parseInt(resultCardPartnerLevel.split(' ')[0], 10)).toBe(0);
       const level = partnerLevel.split('-')[1].split(':')[0];
-      await context.addCookies([{
-        name: 'partner_data',
-        value: '{"SPP":{"company":"Platinum_user"%2C"firstName":"Yugo-SPP-Stage"%2C"lastName"'
-          + ':"Platinum"%2C"level":"' + level.charAt(0).toUpperCase() + level.slice(1) + '"%2C"status":"MEMBER"}}',
-        url: 'https://stage--dx-partners--adobecom.hlx.live/solutionpartners/drafts/automation/regression/partner-news',
-      }]);
+      await signInPage.addCookie('SPP', level.charAt(0).toUpperCase() + level.slice(1), path, context);
       await page.reload();
       await page.waitForLoadState('domcontentloaded');
-    });
-
-    await test.step('I load the news page', async () => {
-      const level = partnerLevel.split('-')[1].split(':')[0];
-
-      await context.addCookies([{
-        name: 'partner_data',
-        value: '{"SPP":{"company":"Platinum_user"%2C"firstName":"Yugo-SPP-Stage"%2C"lastName"'
-          + ':"Platinum"%2C"level":"' + level.charAt(0).toUpperCase() + level.slice(1) + '"%2C"status":"MEMBER"}}',
-        url: 'https://stage--dx-partners--adobecom.hlx.live/solutionpartners/drafts/automation/regression/partner-news',
-      }]);
-      await page.reload();
     });
 
     await test.step('Find automation regression cards for current partner level', async () => {
@@ -251,12 +234,8 @@ test.describe('Validate news block', () => {
       await newsPage.searchField.fill('Automation regression news card spp platinum no1');
       const resultPlatinum = await newsPage.resultNumber.textContent();
       await expect(parseInt(resultPlatinum.split(' ')[0], 10)).toBe(0);
-      await context.addCookies([{
-        name: 'partner_data',
-        value: '{"SPP":{"company":"Platinum_user"%2C"firstName":"Yugo-SPP-Stage"%2C"lastName"'
-        + ':"Platinum"%2C"level":"Platinum"%2C"status":"MEMBER"}}',
-        url: 'https://stage--dx-partners--adobecom.hlx.live/solutionpartners/drafts/automation/regression/partner-news',
-      }]);
+      await signInPage.addCookie('SPP', 'Platinum', baseURL+features[5].path, context);
+
       await page.reload();
       await page.waitForLoadState('domcontentloaded');
       await page.waitForResponse('**/chimera-api/collection?**');
@@ -279,10 +258,10 @@ test.describe('Validate news block', () => {
     });
   });
 
-  test(`${features[6].name},${features[6].tags}`, async ({ page, context }) => {
+  test(`${features[6].name},${features[6].tags}`, async ({ page, context, baseURL }) => {
     await findCardsForPartnerLevel(
       page,
-      features[6].path,
+      baseURL+features[6].path,
       features[6].data.cardPartnerLevel,
       features[6].data.partnerLevel,
       features[6].data.resultTotal,
@@ -291,10 +270,10 @@ test.describe('Validate news block', () => {
     );
   });
 
-  test(`${features[7].name},${features[7].tags}`, async ({ page, context }) => {
+  test(`${features[7].name},${features[7].tags}`, async ({ page, context, baseURL }) => {
     await findCardsForPartnerLevel(
       page,
-      features[7].path,
+      baseURL+features[7].path,
       features[7].data.cardPartnerLevel,
       features[7].data.partnerLevel,
       features[7].data.resultTotal,
@@ -303,10 +282,10 @@ test.describe('Validate news block', () => {
     );
   });
 
-  test(`${features[8].name},${features[8].tags}`, async ({ page, context }) => {
+  test(`${features[8].name},${features[8].tags}`, async ({ page, context, baseURL }) => {
     await findCardsForPartnerLevel(
       page,
-      features[8].path,
+      baseURL+features[8].path,
       features[8].data.cardPartnerLevel,
       features[8].data.partnerLevel,
       features[8].data.resultTotal,
@@ -315,11 +294,11 @@ test.describe('Validate news block', () => {
     );
   });
 
-  test(`${features[9].name},${features[9].tags}`, async ({ page, context }) => {
+  test(`${features[9].name},${features[9].tags}`, async ({ page, context, baseURL }) => {
     await test.step('Click Sign In', async () => {
       await findCardsForPartnerLevel(
         page,
-        features[9].path,
+        baseURL+features[9].path,
         features[9].data.cardPartnerLevel,
         features[9].data.partnerLevel,
         features[9].data.resultTotal,
@@ -333,12 +312,8 @@ test.describe('Validate news block', () => {
     await test.step('Go to stage.adobe.com', async () => {
       await page.goto(`${baseURL}${features[10].path}`);
 
-      await context.addCookies([{
-        name: 'partner_data',
-        value: '{"TPP":{"company":"Platinum_user"%2C"firstName":"Yugo-SPP-Stage"%2C"lastName"'
-          + ':"Platinum"%2C"level":"Platinum"%2C"status":"MEMBER"}}',
-        url: 'https://stage--dx-partners--adobecom.hlx.live/solutionpartners/drafts/automation/regression/partner-news',
-      }]);
+      await signInPage.addCookie('TPP', 'Platinum', baseURL+features[10].path, context);
+
       await page.reload();
       await page.waitForLoadState('domcontentloaded');
     });
