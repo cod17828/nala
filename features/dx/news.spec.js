@@ -111,7 +111,7 @@ module.exports = {
         cardLevelAbove: 'Automation regression news card spp platinum no1',
         numberOfPublicCards: 9,
         partnerLevelCard: 1,
-        noCards: 0
+        noCards: 0,
       },
     },
     {
@@ -127,7 +127,7 @@ module.exports = {
         cardLevelAbove: 'Automation regression news card spp gold no1',
         numberOfPublicCards: 9,
         partnerLevelCard: 1,
-        noCards: 0
+        noCards: 0,
       },
     },
     {
@@ -143,7 +143,7 @@ module.exports = {
         cardLevelAbove: 'Automation regression news card spp silver no1',
         numberOfPublicCards: 9,
         partnerLevelCard: 1,
-        noCards: 0
+        noCards: 0,
       },
     },
     {
@@ -159,7 +159,7 @@ module.exports = {
         cardLevelAbove: 'Automation regression news card spp bronze no1',
         numberOfPublicCards: 9,
         partnerLevelCard: 1,
-        noCards: 0
+        noCards: 0,
       },
     },
     {

@@ -42,7 +42,7 @@ test.describe('Validate news block', () => {
   }
 
   test(`${features[0].name},${features[0].tags}`, async ({ page, baseURL }) => {
-    const data = features[0].data;
+    const { data } = features[0];
     await test.step('Go to News page', async () => {
       console.log('url: ', baseURL + features[0].path);
       await page.goto(`${baseURL}${features[0].path}`);
@@ -83,7 +83,7 @@ test.describe('Validate news block', () => {
   });
 
   test(`${features[1].name},${features[1].tags}`, async ({ page, baseURL }) => {
-    const data = features[1].data;
+    const { data } = features[1];
     await test.step('Go to News page', async () => {
       await page.goto(`${baseURL}${features[1].path}`);
       await page.waitForResponse(chimeraApi);
@@ -118,7 +118,7 @@ test.describe('Validate news block', () => {
   });
 
   test(`${features[2].name},${features[2].tags}`, async ({ page, baseURL }) => {
-    const data = features[2].data;
+    const { data } = features[2];
     await test.step('Go to News page', async () => {
       await page.goto(`${baseURL}${features[2].path}`);
       await page.waitForResponse(chimeraApi);
@@ -175,7 +175,7 @@ test.describe('Validate news block', () => {
   });
 
   test(`${features[3].name},${features[3].tags}`, async ({ page, baseURL }) => {
-    const data = features[3].data;
+    const { data } = features[3];
     await test.step('Go to News page', async () => {
       await page.goto(`${baseURL}${features[3].path}`);
       await page.waitForLoadState('domcontentloaded');
@@ -194,7 +194,7 @@ test.describe('Validate news block', () => {
   });
 
   test(`${features[4].name},${features[4].tags}`, async ({ page, baseURL }) => {
-    const data = features[4].data;
+    const { data } = features[4];
     await test.step('Go to News page', async () => {
       await page.goto(`${baseURL}${features[4].path}`);
       await page.waitForResponse(chimeraApi);
@@ -225,7 +225,7 @@ test.describe('Validate news block', () => {
   });
 
   test(`${features[5].name},${features[5].tags}`, async ({ page, context, baseURL }) => {
-    const data = features[5].data;
+    const { data } = features[5];
     await test.step('Click Sign In', async () => {
       await page.goto(`${baseURL}${features[5].path}`);
       await page.waitForLoadState('domcontentloaded');
@@ -259,7 +259,7 @@ test.describe('Validate news block', () => {
   });
 
   test(`${features[6].name},${features[6].tags}`, async ({ page, context, baseURL }) => {
-    const data = features[6].data;
+    const { data } = features[6];
     await findCardsForPartnerLevel(
       page,
       baseURL + features[6].path,
@@ -269,7 +269,7 @@ test.describe('Validate news block', () => {
   });
 
   test(`${features[7].name},${features[7].tags}`, async ({ page, context, baseURL }) => {
-    const data = features[7].data;
+    const { data } = features[7];
     await findCardsForPartnerLevel(
       page,
       baseURL + features[7].path,
@@ -279,7 +279,7 @@ test.describe('Validate news block', () => {
   });
 
   test(`${features[8].name},${features[8].tags}`, async ({ page, context, baseURL }) => {
-    const data = features[8].data;
+    const { data } = features[8];
     await findCardsForPartnerLevel(
       page,
       baseURL + features[8].path,
@@ -289,7 +289,7 @@ test.describe('Validate news block', () => {
   });
 
   test(`${features[9].name},${features[9].tags}`, async ({ page, context, baseURL }) => {
-    const data = features[9].data;
+    const { data } = features[9];
     await test.step('Click Sign In', async () => {
       await findCardsForPartnerLevel(
         page,
@@ -301,7 +301,7 @@ test.describe('Validate news block', () => {
   });
 
   test(`${features[10].name},${features[10].tags}`, async ({ page, context, baseURL }) => {
-    const data = features[10].data;
+    const { data } = features[10];
     await test.step('Go to stage.adobe.com', async () => {
       await page.goto(`${baseURL}${features[10].path}`);
       await signInPage.addCookie(data.partnerPortal, data.partnerLevel, baseURL + features[10].path, context);
