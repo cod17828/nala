@@ -9,6 +9,9 @@ module.exports = {
         publicCard1: 'Automation regression news card SPP Public no1',
         publicCard2: 'Automation regression news card SPP Public no2',
         cardDescription: 'This is automation',
+        numberOfPublicCards: 9,
+        numberOfMatchingDescCards: 7,
+        numberOfMatchingTitleCards: 1,
       },
       tags: '@dx-news @regression @anonymous',
     },
@@ -21,6 +24,8 @@ module.exports = {
         firstLoadResult: '3 of 8 results',
         secondLoadResult: '6 of 8 results',
         thirdLoadResult: '8 of 8 results',
+        numberOfCardsWithTitle: 8,
+        numberOfPublicCards: 9,
       },
       tags: '@dx-news @regression @anonymous',
     },
@@ -40,6 +45,13 @@ module.exports = {
         filterJapan: 'Japan',
         filterTopic: 'Topic',
         filterSolutions: 'Solutions',
+        numberOfPublicCards: 9,
+        cardsWithCampaign: 1,
+        cardsWithCampaignAndAnalytics: 2,
+        cardsWithTechnical: 1,
+        cardsWithAmericasAndJapan: 3,
+        cardsWithJapan: 1,
+        cardsWithSolutions: 1,
       },
     },
     {
@@ -49,6 +61,7 @@ module.exports = {
       data: {
         cardTitle: 'Automation regression news card SPP Public no1',
         expectedToSeeInURL: '/solutionpartners/drafts/automation/regression/caas-cards/automation-regression-card-no1',
+        cardsWithTitle: 1,
       },
       tags: '@dx-news @regression @anonymous',
     },
@@ -62,6 +75,9 @@ module.exports = {
         cardWithoutNewsCollection: 'Automation regression news card SPP Public without news collection tag',
         cardWithoutTitle: 'Without card title',
         cardWithSpecialChars: '? ! | <> * !@#$%^&*()_+~`<>?\\’|”{}][ уљађз',
+        numberOfPublicCards: 9,
+        noCards: 0,
+        oneCard: 1,
       },
       tags: '@dx-news @regression @anonymous',
     },
@@ -76,6 +92,10 @@ module.exports = {
         partnerPortal: 'SPP',
         expectedToSeeInURL: '/solutionpartners/drafts/'
           + 'automation/regression/caas-cards/automation-regression-platinum-card-no1',
+        numberOfPublicCards: 9,
+        noCards: 0,
+        numberOfAllCards: 14,
+        numberOfPlatinumCards: 1,
       },
     },
     {
@@ -89,6 +109,9 @@ module.exports = {
         resultTotal: 13,
         cardPartnerLevel: 'Automation regression news card SPP Gold no1',
         cardLevelAbove: 'Automation regression news card spp platinum no1',
+        numberOfPublicCards: 9,
+        partnerLevelCard: 1,
+        noCards: 0
       },
     },
     {
@@ -102,6 +125,9 @@ module.exports = {
         resultTotal: 12,
         cardPartnerLevel: 'Automation regression news card SPP Silver no1',
         cardLevelAbove: 'Automation regression news card spp gold no1',
+        numberOfPublicCards: 9,
+        partnerLevelCard: 1,
+        noCards: 0
       },
     },
     {
@@ -115,6 +141,9 @@ module.exports = {
         resultTotal: 11,
         cardPartnerLevel: 'Automation regression news card SPP Bronze no1',
         cardLevelAbove: 'Automation regression news card spp silver no1',
+        numberOfPublicCards: 9,
+        partnerLevelCard: 1,
+        noCards: 0
       },
     },
     {
@@ -128,6 +157,9 @@ module.exports = {
         resultTotal: 10,
         cardPartnerLevel: 'Automation regression news card SPP Community no1',
         cardLevelAbove: 'Automation regression news card spp bronze no1',
+        numberOfPublicCards: 9,
+        partnerLevelCard: 1,
+        noCards: 0
       },
     },
     {
@@ -139,6 +171,7 @@ module.exports = {
       data: {
         partnerLevel: 'Platinum',
         partnerPortal: 'TPP',
+        numberOfPublicCards: 9,
       },
     },
   ],
