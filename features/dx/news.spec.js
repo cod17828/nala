@@ -5,12 +5,23 @@ module.exports = {
       tcid: '1',
       name: '@desc-regression-news-page-search',
       path: '/solutionpartners/drafts/automation/regression/partner-news',
+      data: {
+        publicCard1: 'Automation regression news card SPP Public no1',
+        publicCard2: 'Automation regression news card SPP Public no2',
+        cardDescription: 'This is automation',
+      },
       tags: '@dx-news @regression @anonymous',
     },
     {
       tcid: '2',
       name: '@desc-regression-news-page-pagination-sort',
       path: '/solutionpartners/drafts/automation/regression/partner-news',
+      data: {
+        cardTitle: 'Automation regression news card SPP',
+        firstLoadResult: '3 of 8 results',
+        secondLoadResult: '6 of 8 results',
+        thirdLoadResult: '8 of 8 results',
+      },
       tags: '@dx-news @regression @anonymous',
     },
     {
@@ -18,18 +29,40 @@ module.exports = {
       name: '@desc-regression-news-page-filters',
       path: '/solutionpartners/drafts/automation/regression/partner-news',
       tags: '@dx-news @regression @anonymous',
+      data: {
+        filterApplication: 'Applications',
+        filterCampaign: 'Campaign',
+        filterAnalytics: 'Analytics',
+        filterAudience: 'Audience',
+        filterTechnical: 'Technical',
+        filterRegion: 'Region',
+        filterAmericas: 'Americas',
+        filterJapan: 'Japan',
+        filterTopic: 'Topic',
+        filterSolutions: 'Solutions',
+      },
     },
     {
       tcid: '4',
       name: '@desc-regression-news-page-read-article',
       path: '/solutionpartners/drafts/automation/regression/partner-news',
+      data: {
+        cardTitle: 'Automation regression news card SPP Public no1',
+        expectedToSeeInURL: '/solutionpartners/drafts/automation/regression/caas-cards/automation-regression-card-no1',
+      },
       tags: '@dx-news @regression @anonymous',
-      expectedToSeeInURL: '/solutionpartners/drafts/automation/regression/caas-cards/automation-regression-card-no1',
     },
     {
       tcid: '5',
       name: '@desc-news-page-edge-cases',
       path: '/solutionpartners/drafts/automation/regression/partner-news',
+      data: {
+        dateInPast: 'Automation regression news card SPP with a date in the past',
+        publicCard6: 'Automation regression news card SPP Public card no6',
+        cardWithoutNewsCollection: 'Automation regression news card SPP Public without news collection tag',
+        cardWithoutTitle: 'Without card title',
+        cardWithSpecialChars: '? ! | <> * !@#$%^&*()_+~`<>?\\’|”{}][ уљађз',
+      },
       tags: '@dx-news @regression @anonymous',
     },
     {
@@ -38,7 +71,9 @@ module.exports = {
       path: '/solutionpartners/drafts/automation/regression/partner-news',
       tags: '@dx-news @regression @anonymous',
       data: {
-        partnerLevel: 'spp-platinum:',
+        platinumCard: 'Automation regression news card spp platinum no1',
+        partnerLevel: 'Platinum',
+        partnerPortal: 'SPP',
         expectedToSeeInURL: '/solutionpartners/drafts/'
           + 'automation/regression/caas-cards/automation-regression-platinum-card-no1',
       },
@@ -49,7 +84,8 @@ module.exports = {
       path: '/solutionpartners/drafts/automation/regression/partner-news',
       tags: '@dx-news @regression @anonymous',
       data: {
-        partnerLevel: 'spp-gold:',
+        partnerLevel: 'Gold',
+        partnerPortal: 'SPP',
         resultTotal: 13,
         cardPartnerLevel: 'Automation regression news card SPP Gold no1',
         cardLevelAbove: 'Automation regression news card spp platinum no1',
@@ -61,7 +97,8 @@ module.exports = {
       path: '/solutionpartners/drafts/automation/regression/partner-news',
       tags: '@dx-news @regression @anonymous',
       data: {
-        partnerLevel: 'spp-silver:',
+        partnerLevel: 'Silver',
+        partnerPortal: 'SPP',
         resultTotal: 12,
         cardPartnerLevel: 'Automation regression news card SPP Silver no1',
         cardLevelAbove: 'Automation regression news card spp gold no1',
@@ -73,7 +110,8 @@ module.exports = {
       path: '/solutionpartners/drafts/automation/regression/partner-news',
       tags: '@dx-news @regression @anonymous',
       data: {
-        partnerLevel: 'spp-bronze:',
+        partnerLevel: 'Bronze',
+        partnerPortal: 'SPP',
         resultTotal: 11,
         cardPartnerLevel: 'Automation regression news card SPP Bronze no1',
         cardLevelAbove: 'Automation regression news card spp silver no1',
@@ -85,7 +123,8 @@ module.exports = {
       path: '/solutionpartners/drafts/automation/regression/partner-news',
       tags: '@dx-news @regression @anonymous',
       data: {
-        partnerLevel: 'spp-community:',
+        partnerLevel: 'Community',
+        partnerPortal: 'SPP',
         resultTotal: 10,
         cardPartnerLevel: 'Automation regression news card SPP Community no1',
         cardLevelAbove: 'Automation regression news card spp bronze no1',
@@ -97,7 +136,10 @@ module.exports = {
       path: '/solutionpartners/drafts/automation/regression/partner-news',
       tags: '@dx-news @regression @anonymous',
       baseURL: 'https://www.stage.adobe.com/partners.html',
-      partnerLevel: 'tpp-platinum:',
+      data: {
+        partnerLevel: 'Platinum',
+        partnerPortal: 'TPP',
+      },
     },
   ],
 };

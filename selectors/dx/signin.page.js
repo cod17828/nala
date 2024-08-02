@@ -38,14 +38,12 @@ export default class SignInPage {
   }
 
   async addCookie(partnerPortal, partnerLevel, page, context) {
-    await context.addCookies([{
+    this.context = context;
+    await this.context.addCookies([{
       name: 'partner_data',
-      value: '{"' + partnerPortal + '":{"company":"Company"%2C"firstName":"Name"%2C"lastName"'
-        + ':"LastName"%2C"level":"' + partnerLevel + '"%2C"status":"MEMBER"}}',
+      value: `{"${partnerPortal}":{"company":"Company"%2C"firstName":"Name"%2C"lastName"`
+        + `:"LastName"%2C"level":"${partnerLevel}"%2C"status":"MEMBER"}}`,
       url: page,
     }]);
-
   }
-
-
 }
