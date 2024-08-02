@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
 import AnnouncementsPage from '../../selectors/dme/announcements.page.js';
+import SignInPage from '../../selectors/dme/signin.page.js';
 
 let announcementsPage;
+let singInPage;
 const Announcements = require('../../features/dme/announcements.spec.js');
 
 const { features } = Announcements;
@@ -12,22 +14,8 @@ const chimeraApi = '**/chimera-api/collection?**';
 test.describe('Validate announcements block', () => {
   test.beforeEach(async ({ page }) => {
     announcementsPage = new AnnouncementsPage(page);
+    singInPage = new SignInPage(page);
   });
-
-  async function addCookie({
-    partnerPortal, partnerLevel, permissionRegion, path, page, context,
-  }) {
-    await test.step('Sign in', async () => {
-      await context.addCookies([{
-        name: 'partner_data',
-        value: `{"${partnerPortal}":{"company":"Company"%2C"firstName":"Name"%2C"lastName":"LastName"%2C"level":`
-        + `"${partnerLevel}"%2C"permissionRegion":"${permissionRegion}"%2C"status":"MEMBER"}}`,
-        url: `${path}`,
-      }]);
-      await page.reload();
-      await page.waitForResponse(chimeraApi);
-    });
-  }
 
   test(`${features[0].name},${features[0].tags}`, async ({ page, baseURL }) => {
     const { data } = features[0];
@@ -253,13 +241,16 @@ test.describe('Validate announcements block', () => {
         await page.waitForLoadState('domcontentloaded');
       });
 
-      await addCookie({
-        partnerPortal: `${feature.data.partnerPortal}`,
-        partnerLevel: `${feature.data.partnerLevel}`,
-        permissionRegion: `${feature.data.permissionRegion}`,
-        path: `${baseURL}${feature.path}`,
-        page,
-        context,
+      await test.step('Sign in', async () => {
+        await singInPage.addCookie(
+          feature.data.partnerPortal,
+          feature.data.partnerLevel,
+          feature.data.permissionRegion,
+          `${baseURL}${feature.path}`,
+          context,
+        );
+        await page.reload();
+        await page.waitForResponse(chimeraApi);
       });
 
       await test.step(`Verify card titled ${feature.data.announcementCardTitle} is present on page`, async () => {
