@@ -39,4 +39,14 @@ export default class SignInPage {
     await expect(pages[1].url())
       .toContain(`${expectedToSeeInURL}`);
   }
+
+  async addCookie(partnerPortal, partnerLevel, permissionRegion, page, context) {
+    this.context = context;
+    await this.context.addCookies([{
+      name: 'partner_data',
+      value: `{"${partnerPortal}":{"company":"Company"%2C"firstName":"Name"%2C"lastName":"LastName"%2C"level":`
+      + `"${partnerLevel}"%2C"permissionRegion":"${permissionRegion}"%2C"status":"MEMBER"}}`,
+      url: `${page}`,
+    }]);
+  }
 }
