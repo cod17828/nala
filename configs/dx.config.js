@@ -35,6 +35,8 @@ const config = {
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 60000,
+    headless: true,
+    screenshot: 'only-on-failure',
 
     trace: 'on-first-retry',
     baseURL: process.env.PR_BRANCH_LIVE_URL_GH
