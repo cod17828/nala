@@ -10,6 +10,9 @@ module.exports = {
         numberOfPublicCards: 7,
         numberOfMatchingDescCards: 6,
         numberOfMatchingTitleCards: 1,
+        firstCardTitle: 'Automation regression announcements card worldwide no1',
+        secondCardTitle: 'Automation regression announcements card worldwide no2',
+        searchCards: 'Automation regression',
       },
     },
     {
@@ -20,6 +23,7 @@ module.exports = {
       data: {
         numberOfPublicCards: 7,
         numberOfMatchingDescCards: 6,
+        searchCards: 'Automation regression',
         firstLoadResult: '2 of 6 results',
         secondLoadResult: '4 of 6 results',
         thirdLoadResult: '6 of 6 results',
@@ -33,6 +37,7 @@ module.exports = {
       data: {
         numberOfPublicCards: 7,
         numberOfMatchingDescCards: 6,
+        searchCards: 'Automation regression',
         firstPageResult: '1 - 2 of 6 results',
         secondPageResult: '3 - 4 of 6 results',
         thirdPageResult: '5 - 6 of 6 results',

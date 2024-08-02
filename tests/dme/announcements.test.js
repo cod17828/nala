@@ -27,7 +27,7 @@ test.describe('Validate announcements block', () => {
     });
 
     await test.step('Enter Automation regression announcements card worldwide no1 in search field', async () => {
-      await announcementsPage.searchField.fill('Automation regression announcements card worldwide no1');
+      await announcementsPage.searchField.fill(data.firstCardTitle);
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfMatchingTitleCards);
     });
@@ -39,7 +39,7 @@ test.describe('Validate announcements block', () => {
     });
 
     await test.step('Enter Automation regression announcements card worldwide no2 in search field', async () => {
-      await announcementsPage.searchField.fill('Automation regression announcements card worldwide no2');
+      await announcementsPage.searchField.fill(data.secondCardTitle);
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfMatchingTitleCards);
     });
@@ -51,7 +51,7 @@ test.describe('Validate announcements block', () => {
     });
 
     await test.step('Enter Automation regression in search field', async () => {
-      await announcementsPage.searchField.fill('Automation regression');
+      await announcementsPage.searchField.fill(data.searchCards);
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfMatchingDescCards);
     });
@@ -67,7 +67,7 @@ test.describe('Validate announcements block', () => {
     });
 
     await test.step('Select Oldest sort option', async () => {
-      await announcementsPage.searchField.fill('Automation regression');
+      await announcementsPage.searchField.fill(data.searchCards);
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfMatchingDescCards);
       await announcementsPage.sortBtn.click();
@@ -98,7 +98,7 @@ test.describe('Validate announcements block', () => {
       await announcementsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
-      await announcementsPage.searchField.fill('Automation regression');
+      await announcementsPage.searchField.fill(data.searchCards);
       const filteredCards = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(filteredCards.split(' ')[0], 10)).toBe(data.numberOfMatchingDescCards);
     });
