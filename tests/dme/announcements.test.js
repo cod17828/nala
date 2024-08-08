@@ -8,6 +8,7 @@ const Announcements = require('../../features/dme/announcements.spec.js');
 
 const { features } = Announcements;
 const regionCases = features.slice(6, 18);
+const partnerLevelCases = features.slice(20, 23);
 
 const chimeraApi = '**/chimera-api/collection?**';
 
@@ -258,6 +259,102 @@ test.describe('Validate announcements block', () => {
         await announcementsPage.firstCardTitle.waitFor({ state: 'visible', timeout: 15000 });
         const result = await announcementsPage.resultNumber.textContent();
         await expect(parseInt(result.split(' ')[0], 10)).toBe(feature.data.numberOfMatchingTitleCards);
+      });
+    });
+  });
+
+  test(`${features[18].name},${features[18].tags}`, async ({ page, context, baseURL }) => {
+    const { data, path } = features[18];
+    await test.step('Go to Announcements page', async () => {
+      await page.goto(`${baseURL}${path}`);
+      await page.waitForLoadState('domcontentloaded');
+    });
+
+    await test.step(`Verify card titled ${data.announcementCardTitle} is present on page`, async () => {
+      await announcementsPage.searchField.fill(`${data.announcementCardTitle}`);
+      await announcementsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
+      const result = await announcementsPage.resultNumber.textContent();
+      await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfMatchingTitleCardsNonLoggedIn);
+    });
+
+    await test.step('Sign in', async () => {
+      await singInPage.addCookie(
+        data.partnerPortal,
+        data.partnerLevel,
+        data.permissionRegion,
+        `${baseURL}${path}`,
+        context,
+      );
+      await page.reload();
+      await page.waitForResponse(chimeraApi);
+    });
+
+    await test.step(`Verify card titled ${data.announcementCardTitle} is not present on page after login`, async () => {
+      await announcementsPage.searchField.fill(`${data.announcementCardTitle}`);
+      const result = await announcementsPage.resultNumber.textContent();
+      await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfMatchingTitleCardsLoggedIn);
+    });
+  });
+
+  test(`${features[19].name},${features[19].tags}`, async ({ page, context, baseURL }) => {
+    const { data, path } = features[19];
+    await test.step('Go to Announcements page', async () => {
+      await page.goto(`${baseURL}${path}`);
+      await page.waitForLoadState('domcontentloaded');
+    });
+
+    await test.step('Sign in', async () => {
+      await singInPage.addCookie(
+        data.partnerPortal,
+        data.partnerLevel,
+        data.permissionRegion,
+        `${baseURL}${path}`,
+        context,
+      );
+      await page.reload();
+      await page.waitForResponse(chimeraApi);
+    });
+
+    await test.step(`Verify card titled ${data.platinumCardTitle} is present on page`, async () => {
+      const resultTotal = await announcementsPage.resultNumber.textContent();
+      await expect(parseInt(resultTotal.split(' ')[0], 10)).toBe(data.totalNumberOfCards);
+      await announcementsPage.searchField.fill(`${data.platinumCardTitle}`);
+      const resultSearch = await announcementsPage.resultNumber.textContent();
+      await expect(parseInt(resultSearch.split(' ')[0], 10)).toBe(data.numberOfMatchingTitleCards);
+    });
+  });
+
+  partnerLevelCases.forEach((feature) => {
+    test(`${feature.name},${feature.tags}`, async ({ page, context, baseURL }) => {
+      await test.step('Go to Announcements page', async () => {
+        await page.goto(`${baseURL}${feature.path}`);
+        await page.waitForLoadState('domcontentloaded');
+      });
+
+      await test.step('Sign in', async () => {
+        await singInPage.addCookie(
+          feature.data.partnerPortal,
+          feature.data.partnerLevel,
+          feature.data.permissionRegion,
+          `${baseURL}${feature.path}`,
+          context,
+        );
+        await page.reload();
+        await page.waitForResponse(chimeraApi);
+      });
+
+      await test.step(`Verify card titled ${feature.data.partnerLevelCardTitle} is present on page`, async () => {
+        const resultTotal = await announcementsPage.resultNumber.textContent();
+        await expect(parseInt(resultTotal.split(' ')[0], 10)).toBe(feature.data.totalNumberOfCards);
+        await announcementsPage.searchField.fill(`${feature.data.partnerLevelCardTitle}`);
+        const resultSearch = await announcementsPage.resultNumber.textContent();
+        await expect(parseInt(resultSearch.split(' ')[0], 10)).toBe(feature.data.numberOfPartnerLevelCards);
+      });
+
+      await test.step(`Verify card titled ${feature.data.higherPartnerLevelCardTitle} is not present on page`, async () => {
+        await announcementsPage.searchField.fill(`${feature.data.higherPartnerLevelCardTitle}`);
+        const resultSearch = await announcementsPage.resultNumber.textContent();
+        await expect(parseInt(resultSearch.split(' ')[0], 10)).toBe(feature.data.numberOfHigherPartnerLevelCards);
       });
     });
   });
