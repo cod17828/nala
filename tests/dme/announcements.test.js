@@ -22,7 +22,7 @@ test.describe('Validate announcements block', () => {
     const { data } = features[0];
     await test.step('Go to Announcements page', async () => {
       await page.goto(`${baseURL}${features[0].path}`);
-      await announcementsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
+      await page.waitForResponse(chimeraApi);
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
     });
@@ -62,6 +62,8 @@ test.describe('Validate announcements block', () => {
     const { data } = features[1];
     await test.step('Go to Announcements page', async () => {
       await page.goto(`${baseURL}${features[1].path}`);
+      await page.waitForLoadState('domcontentloaded');
+      await page.waitForResponse(chimeraApi);
       await announcementsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
@@ -96,6 +98,8 @@ test.describe('Validate announcements block', () => {
     const { data } = features[2];
     await test.step('Go to Announcements page', async () => {
       await page.goto(`${baseURL}${features[2].path}`);
+      await page.waitForLoadState('domcontentloaded');
+      await page.waitForResponse(chimeraApi);
       await announcementsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
@@ -129,6 +133,8 @@ test.describe('Validate announcements block', () => {
     const { data } = features[3];
     await test.step('Go to Announcements page', async () => {
       await page.goto(`${baseURL}${features[3].path}`);
+      await page.waitForLoadState('domcontentloaded');
+      await page.waitForResponse(chimeraApi);
       await announcementsPage.firstCardDate.waitFor({ state: 'visible', timeout: 10000 });
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
@@ -205,6 +211,8 @@ test.describe('Validate announcements block', () => {
     const { data } = features[5];
     await test.step('Go to Announcements page', async () => {
       await page.goto(`${baseURL}${features[5].path}`);
+      await page.waitForLoadState('domcontentloaded');
+      await page.waitForResponse(chimeraApi);
       await announcementsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
