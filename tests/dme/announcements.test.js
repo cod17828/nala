@@ -251,7 +251,8 @@ test.describe('Validate announcements block', () => {
           context,
         );
         await page.reload();
-        await page.waitForResponse(chimeraApi);
+        await page.waitForLoadState('domcontentloaded');
+//         await page.waitForResponse(chimeraApi);
       });
 
       await test.step(`Verify card titled ${feature.data.announcementCardTitle} is present on page`, async () => {
@@ -286,7 +287,7 @@ test.describe('Validate announcements block', () => {
         context,
       );
       await page.reload();
-      await page.waitForResponse(chimeraApi);
+      await page.waitForLoadState('domcontentloaded');
     });
 
     await test.step(`Verify card titled ${data.announcementCardTitle} is not present on page after login`, async () => {
@@ -312,7 +313,7 @@ test.describe('Validate announcements block', () => {
         context,
       );
       await page.reload();
-      await page.waitForResponse(chimeraApi);
+      await page.waitForLoadState('domcontentloaded');
     });
 
     await test.step(`Verify card titled ${data.platinumCardTitle} is present on page`, async () => {
@@ -340,7 +341,7 @@ test.describe('Validate announcements block', () => {
           context,
         );
         await page.reload();
-        await page.waitForResponse(chimeraApi);
+        await page.waitForLoadState('domcontentloaded');
       });
 
       await test.step(`Verify card titled ${feature.data.partnerLevelCardTitle} is present on page`, async () => {
