@@ -13,6 +13,10 @@ export default class NewsPage {
     this.loadMore = page.locator('[aria-label="Load more"]');
     this.firstCardDate = page.locator('.card-date').nth(0);
     this.lastCardDate = page.locator('.card-date').nth(5);
+    this.paginationPrevButton = page.locator('button.pagination-prev-btn');
+    this.paginationNextButton = page.locator('button.pagination-next-btn');
+    this.pageNumButton = page.locator('button.page-btn');
+    this.pageCount = page.locator('.page-btn');
 
     this.signInButton = page.locator('button[daa-ll="Sign In"].feds-signIn');
     this.profileIconButton = page.locator('.feds-profile-button');
@@ -37,5 +41,9 @@ export default class NewsPage {
 
   async clearFilter(filter, number) {
     await this.page.locator(`[aria-label="${filter}"] + [aria-label="${number}"]`).click();
+  }
+
+  async clickPageNumButton(pageNum) {
+    await this.page.locator(`button[aria-label="Page ${pageNum}"]`).click();
   }
 }
