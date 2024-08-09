@@ -21,8 +21,10 @@ test.describe('Validate announcements block', () => {
   test(`${features[0].name},${features[0].tags}`, async ({ page, baseURL }) => {
     const { data } = features[0];
     await test.step('Go to Announcements page', async () => {
+      const responsePromise = page.waitForResponse(chimeraApi);
       await page.goto(`${baseURL}${features[0].path}`);
-      await page.waitForResponse(chimeraApi);
+      await page.waitForLoadState('domcontentloaded');
+      const response = await responsePromise;
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
     });
@@ -61,10 +63,10 @@ test.describe('Validate announcements block', () => {
   test(`${features[1].name},${features[1].tags}`, async ({ page, baseURL }) => {
     const { data } = features[1];
     await test.step('Go to Announcements page', async () => {
+      const responsePromise = page.waitForResponse(chimeraApi);
       await page.goto(`${baseURL}${features[1].path}`);
       await page.waitForLoadState('domcontentloaded');
-      await page.waitForResponse(chimeraApi);
-      await announcementsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
+      const response = await responsePromise;
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
     });
@@ -97,10 +99,10 @@ test.describe('Validate announcements block', () => {
   test(`${features[2].name},${features[2].tags}`, async ({ page, baseURL }) => {
     const { data } = features[2];
     await test.step('Go to Announcements page', async () => {
+      const responsePromise = page.waitForResponse(chimeraApi);
       await page.goto(`${baseURL}${features[2].path}`);
       await page.waitForLoadState('domcontentloaded');
-      await page.waitForResponse(chimeraApi);
-      await announcementsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
+      const response = await responsePromise;
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
       await announcementsPage.searchField.fill(data.searchCards);
@@ -132,9 +134,10 @@ test.describe('Validate announcements block', () => {
   test(`${features[3].name},${features[3].tags}`, async ({ page, baseURL }) => {
     const { data } = features[3];
     await test.step('Go to Announcements page', async () => {
+      const responsePromise = page.waitForResponse(chimeraApi);
       await page.goto(`${baseURL}${features[3].path}`);
       await page.waitForLoadState('domcontentloaded');
-      await page.waitForResponse(chimeraApi);
+      const response = await responsePromise;
       await announcementsPage.firstCardDate.waitFor({ state: 'visible', timeout: 10000 });
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
@@ -210,9 +213,10 @@ test.describe('Validate announcements block', () => {
   test(`${features[5].name},${features[5].tags}`, async ({ page, baseURL }) => {
     const { data } = features[5];
     await test.step('Go to Announcements page', async () => {
+      const responsePromise = page.waitForResponse(chimeraApi);
       await page.goto(`${baseURL}${features[5].path}`);
       await page.waitForLoadState('domcontentloaded');
-      await page.waitForResponse(chimeraApi);
+      const response = await responsePromise;
       await announcementsPage.firstCardDate.waitFor({ state: 'visible', timeout: 15000 });
       const result = await announcementsPage.resultNumber.textContent();
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
@@ -258,9 +262,10 @@ test.describe('Validate announcements block', () => {
           `${baseURL}${feature.path}`,
           context,
         );
+        const responsePromise = page.waitForResponse(chimeraApi);
         await page.reload();
         await page.waitForLoadState('domcontentloaded');
-//         await page.waitForResponse(chimeraApi);
+        const response = await responsePromise;
       });
 
       await test.step(`Verify card titled ${feature.data.announcementCardTitle} is present on page`, async () => {
@@ -320,8 +325,10 @@ test.describe('Validate announcements block', () => {
         `${baseURL}${path}`,
         context,
       );
+      const responsePromise = page.waitForResponse(chimeraApi);
       await page.reload();
       await page.waitForLoadState('domcontentloaded');
+      const response = await responsePromise;
     });
 
     await test.step(`Verify card titled ${data.platinumCardTitle} is present on page`, async () => {
@@ -348,8 +355,10 @@ test.describe('Validate announcements block', () => {
           `${baseURL}${feature.path}`,
           context,
         );
+        const responsePromise = page.waitForResponse(chimeraApi);
         await page.reload();
         await page.waitForLoadState('domcontentloaded');
+        const response = await responsePromise;
       });
 
       await test.step(`Verify card titled ${feature.data.partnerLevelCardTitle} is present on page`, async () => {
