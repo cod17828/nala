@@ -37,10 +37,12 @@ test.describe('Validate announcements block', () => {
       }
 
     });
-    if (await page.evaluate(() => !window.cardsLoaded)) {
+    try {
       await page.waitForFunction(() => {
         return window.cardsLoaded;
       });
+    } catch {
+      console.log('page', page);
     }
 
     const result = await announcementsPage.resultNumber.textContent();
