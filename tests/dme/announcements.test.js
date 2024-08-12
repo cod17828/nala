@@ -42,7 +42,7 @@ test.describe('Validate announcements block', () => {
         return window.cardsLoaded;
       });
     } catch {
-      console.log('page', page);
+      console.log('announcementsPage', await announcementsPage.resultNumber.textContent());
     }
 
     const result = await announcementsPage.resultNumber.textContent();
