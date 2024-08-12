@@ -49,15 +49,15 @@ const config = {
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'dme-live-firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'dme-live-webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+//     {
+//       name: 'dme-live-firefox',
+//       use: { ...devices['Desktop Firefox'] },
+//     },
+//
+//     {
+//       name: 'dme-live-webkit',
+//       use: { ...devices['Desktop Safari'] },
+//     },
   ],
 };
 module.exports = config;

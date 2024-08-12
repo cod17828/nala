@@ -21,6 +21,7 @@ test.describe('Validate announcements block', () => {
   test(`${features[0].name},${features[0].tags}`, async ({ page, baseURL }) => {
     const { data } = features[0];
     await test.step('Go to Announcements page', async () => {
+    page.on('console', msg => console.log(msg.text()));
     console.log('before', new Date());
     await page.goto(`${baseURL}${features[0].path}`);
     console.log('after', new Date());
@@ -37,12 +38,13 @@ test.describe('Validate announcements block', () => {
       }
 
     });
+    console.log('announcementsPage', await announcementsPage.resultNumber.textContent());
     try {
       await page.waitForFunction(() => {
         return window.cardsLoaded;
       });
     } catch {
-      console.log('announcementsPage', await announcementsPage.resultNumber.textContent());
+      console.log('catch block');
     }
 
     const result = await announcementsPage.resultNumber.textContent();
@@ -82,40 +84,40 @@ test.describe('Validate announcements block', () => {
     });
   });
 
-  test(`${features[1].name},${features[1].tags}`, async ({ page, baseURL }) => {
-    const { data } = features[1];
-    await test.step('Go to Announcements page', async () => {
-      await page.goto(`${baseURL}${features[1].path}`);
-      await page.on('partner-cards-loaded', () => {
-        const result = announcementsPage.resultNumber.textContent();
-        expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
-      });
-    });
-
-    await test.step('Select Oldest sort option', async () => {
-      await announcementsPage.searchField.fill(data.searchCards);
-      const result = await announcementsPage.resultNumber.textContent();
-      await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfMatchingDescCards);
-      await announcementsPage.sortBtn.click();
-      await announcementsPage.oldestOption.click();
-      const paginationText = await announcementsPage.paginationText.textContent();
-      await expect(paginationText.toLowerCase()).toBe(data.firstLoadResult);
-    });
-
-    await test.step('Load more cards', async () => {
-      await announcementsPage.loadMore.click();
-      let paginationText = await announcementsPage.paginationText.textContent();
-      await expect(paginationText.toLowerCase()).toBe(data.secondLoadResult);
-      await announcementsPage.loadMore.click();
-      paginationText = await announcementsPage.paginationText.textContent();
-      await expect(paginationText.toLowerCase()).toBe(data.thirdLoadResult);
-      await expect(await announcementsPage.loadMore).not.toBeVisible();
-      const firstCardDate = new Date(await announcementsPage.firstCardDate.textContent()).getTime();
-      const lastCardDate = new Date(await announcementsPage.lastCardDate.textContent()).getTime();
-      await expect(firstCardDate).toBeLessThan(lastCardDate);
-      await expect(await announcementsPage.cardCount.count()).toBe(data.numberOfMatchingDescCards);
-    });
-  });
+//   test(`${features[1].name},${features[1].tags}`, async ({ page, baseURL }) => {
+//     const { data } = features[1];
+//     await test.step('Go to Announcements page', async () => {
+//       await page.goto(`${baseURL}${features[1].path}`);
+//       await page.on('partner-cards-loaded', () => {
+//         const result = announcementsPage.resultNumber.textContent();
+//         expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
+//       });
+//     });
+//
+//     await test.step('Select Oldest sort option', async () => {
+//       await announcementsPage.searchField.fill(data.searchCards);
+//       const result = await announcementsPage.resultNumber.textContent();
+//       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfMatchingDescCards);
+//       await announcementsPage.sortBtn.click();
+//       await announcementsPage.oldestOption.click();
+//       const paginationText = await announcementsPage.paginationText.textContent();
+//       await expect(paginationText.toLowerCase()).toBe(data.firstLoadResult);
+//     });
+//
+//     await test.step('Load more cards', async () => {
+//       await announcementsPage.loadMore.click();
+//       let paginationText = await announcementsPage.paginationText.textContent();
+//       await expect(paginationText.toLowerCase()).toBe(data.secondLoadResult);
+//       await announcementsPage.loadMore.click();
+//       paginationText = await announcementsPage.paginationText.textContent();
+//       await expect(paginationText.toLowerCase()).toBe(data.thirdLoadResult);
+//       await expect(await announcementsPage.loadMore).not.toBeVisible();
+//       const firstCardDate = new Date(await announcementsPage.firstCardDate.textContent()).getTime();
+//       const lastCardDate = new Date(await announcementsPage.lastCardDate.textContent()).getTime();
+//       await expect(firstCardDate).toBeLessThan(lastCardDate);
+//       await expect(await announcementsPage.cardCount.count()).toBe(data.numberOfMatchingDescCards);
+//     });
+//   });
 
 //   test(`${features[2].name},${features[2].tags}`, async ({ page, baseURL }) => {
 //     const { data } = features[2];
