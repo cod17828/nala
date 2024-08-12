@@ -4,7 +4,7 @@ module.exports = {
     {
       tcid: '1',
       name: '@desc-regression-announcements-page-search',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         numberOfPublicCards: 7,
@@ -18,7 +18,7 @@ module.exports = {
     {
       tcid: '2',
       name: '@desc-regression-announcements-page-load-more-sort',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         numberOfPublicCards: 7,

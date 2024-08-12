@@ -27,15 +27,21 @@ test.describe('Validate announcements block', () => {
 
     await page.evaluate(() => {
       console.log('second', new Date());
-      document.addEventListener('partner-cards-loaded', () => {
+      if (document.querySelector('.card-title')) {
         window.cardsLoaded = true;
-        console.log('third');
-      });
-    });
+      } else {
+        document.addEventListener('partner-cards-loaded', () => {
+          window.cardsLoaded = true;
+          console.log('third');
+        });
+      }
 
-    await page.waitForFunction(() => {
-      return window.cardsLoaded;
     });
+    if (await page.evaluate(() => !window.cardsLoaded)) {
+      await page.waitForFunction(() => {
+        return window.cardsLoaded;
+      });
+    }
 
     const result = await announcementsPage.resultNumber.textContent();
     console.log('result0', result);
