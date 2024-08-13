@@ -1,0 +1,915 @@
+{
+  "cards": [
+    {
+      "id": "eaec91c2-daad-54a6-9689-653e9f6b0521",
+      "showCard": {
+        "from": "",
+        "until": ""
+      },
+      "styles": {
+        "typeOverride": "default",
+        "backgroundImage": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/media_17e7090b334966ec40f5d3a198638e2b7eb6d6b91.jpeg",
+        "backgroundAltText": "Automation regression announcements card Worldwide event ended",
+        "mnemonic": "",
+        "icon": "",
+        "iconAlt": ""
+      },
+      "overlays": {
+        "banner": {
+          "backgroundColor": "#EAEAEA",
+          "fontColor": "#323232",
+          "description": "",
+          "icon": ""
+        },
+        "logo": {
+          "src": ""
+        },
+        "label": {
+          "description": ""
+        },
+        "videoButton": {
+          "url": ""
+        }
+      },
+      "tags": [
+        {
+          "id": "caas:adobe-partners/qa-content"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/partner-level/public"
+        },
+        {
+          "id": "caas:adobe-partners/cpp"
+        },
+        {
+          "id": "caas:adobe-partners/collections/announcements"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/region/worldwide"
+        }
+      ],
+      "contentArea": {
+        "detailText": "",
+        "title": "Automation regression announcements card Worldwide event ended",
+        "url": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-event-ended",
+        "description": "Description of the Automation regression announcements card Worldwide event ended card.",
+        "dateDetailText": {
+          "type": "date-interval",
+          "startTime": "",
+          "endTime": ""
+        }
+      },
+      "footer": [
+        {
+          "divider": false,
+          "left": [
+            {
+              "type": "bookmark",
+              "saveCardIcon": "",
+              "unsaveCardIcon": "",
+              "cardSaveText": "",
+              "unsaveCardText": ""
+            },
+            {
+              "type": "date-interval",
+              "startTime": "2024-07-20T22:00:00.000Z",
+              "endTime": "2024-07-27T22:00:00.000Z"
+            }
+          ],
+          "center": [],
+          "right": [
+            {
+              "type": "button",
+              "style": "",
+              "text": "Read now",
+              "href": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-event-ended"
+            }
+          ]
+        }
+      ],
+      "search": {},
+      "cardDate": "2024-07-06T22:00:00.000Z",
+      "createdDate": "2024-07-06T22:00:00.000Z",
+      "modifiedDate": "2024-07-31T11:04:54.000Z",
+      "startDate": "2024-07-20T22:00:00.000Z",
+      "endDate": "2024-07-27T22:00:00.000Z",
+      "ctaLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-event-ended",
+      "arbitrary": [],
+      "overlayLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-event-ended",
+      "lang": "en",
+      "country": "us",
+      "origin": "dme-partners"
+    },
+    {
+      "id": "01bd96eb-7b8c-521d-8c11-ad98b92a1a80",
+      "showCard": {
+        "from": "",
+        "until": ""
+      },
+      "styles": {
+        "typeOverride": "default",
+        "backgroundImage": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/media_17e7090b334966ec40f5d3a198638e2b7eb6d6b91.jpeg",
+        "backgroundAltText": "Automation regression announcements card Worldwide date in past",
+        "mnemonic": "",
+        "icon": "",
+        "iconAlt": ""
+      },
+      "overlays": {
+        "banner": {
+          "backgroundColor": "#EAEAEA",
+          "fontColor": "#323232",
+          "description": "",
+          "icon": ""
+        },
+        "logo": {
+          "src": ""
+        },
+        "label": {
+          "description": ""
+        },
+        "videoButton": {
+          "url": ""
+        }
+      },
+      "tags": [
+        {
+          "id": "caas:adobe-partners/qa-content"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/partner-level/public"
+        },
+        {
+          "id": "caas:adobe-partners/cpp"
+        },
+        {
+          "id": "caas:adobe-partners/collections/announcements"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/region/worldwide"
+        }
+      ],
+      "contentArea": {
+        "detailText": "",
+        "title": "Automation regression announcements card Worldwide date in past",
+        "url": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-date-in-past",
+        "description": "Description of the Automation regression announcements card Worldwide date in past card.",
+        "dateDetailText": {
+          "type": "date-interval",
+          "startTime": "",
+          "endTime": ""
+        }
+      },
+      "footer": [
+        {
+          "divider": false,
+          "left": [
+            {
+              "type": "bookmark",
+              "saveCardIcon": "",
+              "unsaveCardIcon": "",
+              "cardSaveText": "",
+              "unsaveCardText": ""
+            }
+          ],
+          "center": [],
+          "right": [
+            {
+              "type": "button",
+              "style": "",
+              "text": "Read now",
+              "href": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-date-in-past"
+            }
+          ]
+        }
+      ],
+      "search": {},
+      "cardDate": "2023-06-30T22:00:00.000Z",
+      "createdDate": "2023-06-30T22:00:00.000Z",
+      "modifiedDate": "2024-07-31T11:01:47.000Z",
+      "startDate": "",
+      "endDate": "",
+      "ctaLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-date-in-past",
+      "arbitrary": [],
+      "overlayLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-date-in-past",
+      "lang": "en",
+      "country": "us",
+      "origin": "dme-partners"
+    },
+    {
+      "id": "2292c1ee-beec-563f-a1ab-5c6a58bf1f46",
+      "showCard": {
+        "from": "",
+        "until": ""
+      },
+      "styles": {
+        "typeOverride": "default",
+        "backgroundImage": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/media_17e7090b334966ec40f5d3a198638e2b7eb6d6b91.jpeg",
+        "backgroundAltText": "Automation regression announcements card worldwide with special characters ? ! | <> * !@#$%^&*()_+~`<>?\\’|”{}][ уљађз",
+        "mnemonic": "",
+        "icon": "",
+        "iconAlt": ""
+      },
+      "overlays": {
+        "banner": {
+          "backgroundColor": "#EAEAEA",
+          "fontColor": "#323232",
+          "description": "",
+          "icon": ""
+        },
+        "logo": {
+          "src": ""
+        },
+        "label": {
+          "description": ""
+        },
+        "videoButton": {
+          "url": ""
+        }
+      },
+      "tags": [
+        {
+          "id": "caas:adobe-partners/qa-content"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/partner-level/public"
+        },
+        {
+          "id": "caas:adobe-partners/cpp"
+        },
+        {
+          "id": "caas:adobe-partners/collections/announcements"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/region/worldwide"
+        }
+      ],
+      "contentArea": {
+        "detailText": "",
+        "title": "Automation regression announcements card worldwide with special characters ? ! | <> * !@#$%^&*()_+~`<>?\\’|”{}][ уљађз",
+        "url": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-special-chars",
+        "description": "Description of Automation regression announcements card worldwide with special characters ? ! | <> * !@#$%^&*()_+~`<>?\\’|”{}][ уљађз card.",
+        "dateDetailText": {
+          "type": "date-interval",
+          "startTime": "",
+          "endTime": ""
+        }
+      },
+      "footer": [
+        {
+          "divider": false,
+          "left": [
+            {
+              "type": "bookmark",
+              "saveCardIcon": "",
+              "unsaveCardIcon": "",
+              "cardSaveText": "",
+              "unsaveCardText": ""
+            }
+          ],
+          "center": [],
+          "right": [
+            {
+              "type": "button",
+              "style": "",
+              "text": "Read now",
+              "href": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-special-chars"
+            }
+          ]
+        }
+      ],
+      "search": {},
+      "cardDate": "2034-07-05T22:00:00.000Z",
+      "createdDate": "2034-07-05T22:00:00.000Z",
+      "modifiedDate": "2024-07-31T10:41:49.000Z",
+      "startDate": "",
+      "endDate": "",
+      "ctaLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-special-chars",
+      "arbitrary": [],
+      "overlayLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-special-chars",
+      "lang": "en",
+      "country": "us",
+      "origin": "dme-partners"
+    },
+    {
+      "id": "b73dc35a-c6a6-55e2-9eaf-063436fb6559",
+      "showCard": {
+        "from": "",
+        "until": ""
+      },
+      "styles": {
+        "typeOverride": "default",
+        "backgroundImage": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/media_17e7090b334966ec40f5d3a198638e2b7eb6d6b91.jpeg",
+        "backgroundAltText": "",
+        "mnemonic": "",
+        "icon": "",
+        "iconAlt": ""
+      },
+      "overlays": {
+        "banner": {
+          "backgroundColor": "#EAEAEA",
+          "fontColor": "#323232",
+          "description": "",
+          "icon": ""
+        },
+        "logo": {
+          "src": ""
+        },
+        "label": {
+          "description": ""
+        },
+        "videoButton": {
+          "url": ""
+        }
+      },
+      "tags": [
+        {
+          "id": "caas:adobe-partners/qa-content"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/partner-level/public"
+        },
+        {
+          "id": "caas:adobe-partners/cpp"
+        },
+        {
+          "id": "caas:adobe-partners/collections/announcements"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/region/worldwide"
+        }
+      ],
+      "contentArea": {
+        "detailText": "",
+        "title": "card-metadata",
+        "url": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no-title",
+        "description": "",
+        "dateDetailText": {
+          "type": "date-interval",
+          "startTime": "",
+          "endTime": ""
+        }
+      },
+      "footer": [
+        {
+          "divider": false,
+          "left": [
+            {
+              "type": "bookmark",
+              "saveCardIcon": "",
+              "unsaveCardIcon": "",
+              "cardSaveText": "",
+              "unsaveCardText": ""
+            }
+          ],
+          "center": [],
+          "right": [
+            {
+              "type": "button",
+              "style": "",
+              "text": "Read now",
+              "href": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no-title"
+            }
+          ]
+        }
+      ],
+      "search": {},
+      "cardDate": "2035-06-30T22:00:00.000Z",
+      "createdDate": "2035-06-30T22:00:00.000Z",
+      "modifiedDate": "2024-07-31T10:30:21.000Z",
+      "startDate": "",
+      "endDate": "",
+      "ctaLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no-title",
+      "arbitrary": [],
+      "overlayLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no-title",
+      "lang": "en",
+      "country": "us",
+      "origin": "dme-partners"
+    },
+    {
+      "id": "baf50c09-e329-5740-af9c-998af542c7bb",
+      "showCard": {
+        "from": "",
+        "until": ""
+      },
+      "styles": {
+        "typeOverride": "default",
+        "backgroundImage": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/media_17e7090b334966ec40f5d3a198638e2b7eb6d6b91.jpeg",
+        "backgroundAltText": "Automation regression announcements card Worldwide too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title",
+        "mnemonic": "",
+        "icon": "",
+        "iconAlt": ""
+      },
+      "overlays": {
+        "banner": {
+          "backgroundColor": "#EAEAEA",
+          "fontColor": "#323232",
+          "description": "",
+          "icon": ""
+        },
+        "logo": {
+          "src": ""
+        },
+        "label": {
+          "description": ""
+        },
+        "videoButton": {
+          "url": ""
+        }
+      },
+      "tags": [
+        {
+          "id": "caas:adobe-partners/qa-content"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/partner-level/public"
+        },
+        {
+          "id": "caas:adobe-partners/cpp"
+        },
+        {
+          "id": "caas:adobe-partners/collections/announcements"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/region/worldwide"
+        }
+      ],
+      "contentArea": {
+        "detailText": "",
+        "title": "Automation regression announcements card Worldwide too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title too long title",
+        "url": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-too-long-title",
+        "description": "Description of the Automation regression announcements card Worldwide too long title too long title too long title too long title too long title too long title too long title too…",
+        "dateDetailText": {
+          "type": "date-interval",
+          "startTime": "",
+          "endTime": ""
+        }
+      },
+      "footer": [
+        {
+          "divider": false,
+          "left": [
+            {
+              "type": "bookmark",
+              "saveCardIcon": "",
+              "unsaveCardIcon": "",
+              "cardSaveText": "",
+              "unsaveCardText": ""
+            }
+          ],
+          "center": [],
+          "right": [
+            {
+              "type": "button",
+              "style": "",
+              "text": "Read now",
+              "href": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-too-long-title"
+            }
+          ]
+        }
+      ],
+      "search": {},
+      "cardDate": "2034-07-04T22:00:00.000Z",
+      "createdDate": "2034-07-04T22:00:00.000Z",
+      "modifiedDate": "2024-07-31T10:34:34.000Z",
+      "startDate": "",
+      "endDate": "",
+      "ctaLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-too-long-title",
+      "arbitrary": [],
+      "overlayLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-too-long-title",
+      "lang": "en",
+      "country": "us",
+      "origin": "dme-partners"
+    },
+    {
+      "id": "390dab54-c852-5ae9-825c-55d6c36a95b6",
+      "showCard": {
+        "from": "",
+        "until": ""
+      },
+      "styles": {
+        "typeOverride": "default",
+        "backgroundImage": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/media_17e7090b334966ec40f5d3a198638e2b7eb6d6b91.jpeg",
+        "backgroundAltText": "Automation regression announcements card Worldwide no1",
+        "mnemonic": "",
+        "icon": "",
+        "iconAlt": ""
+      },
+      "overlays": {
+        "banner": {
+          "backgroundColor": "#EAEAEA",
+          "fontColor": "#323232",
+          "description": "",
+          "icon": ""
+        },
+        "logo": {
+          "src": ""
+        },
+        "label": {
+          "description": ""
+        },
+        "videoButton": {
+          "url": ""
+        }
+      },
+      "tags": [
+        {
+          "id": "caas:adobe-partners/qa-content"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/partner-level/public"
+        },
+        {
+          "id": "caas:adobe-partners/cpp"
+        },
+        {
+          "id": "caas:adobe-partners/collections/announcements"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/region/worldwide"
+        }
+      ],
+      "contentArea": {
+        "detailText": "",
+        "title": "Automation regression announcements card Worldwide no1",
+        "url": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no1",
+        "description": "Description of the Automation regression announcements card Worldwide no1 card.",
+        "dateDetailText": {
+          "type": "date-interval",
+          "startTime": "",
+          "endTime": ""
+        }
+      },
+      "footer": [
+        {
+          "divider": false,
+          "left": [
+            {
+              "type": "bookmark",
+              "saveCardIcon": "",
+              "unsaveCardIcon": "",
+              "cardSaveText": "",
+              "unsaveCardText": ""
+            }
+          ],
+          "center": [],
+          "right": [
+            {
+              "type": "button",
+              "style": "",
+              "text": "Read now",
+              "href": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no1"
+            }
+          ]
+        }
+      ],
+      "search": {
+        "key": "audience"
+      },
+      "cardDate": "2034-06-30T22:00:00.000Z",
+      "createdDate": "2034-06-30T22:00:00.000Z",
+      "modifiedDate": "2024-08-01T13:01:00.000Z",
+      "startDate": "",
+      "endDate": "",
+      "ctaLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no1",
+      "arbitrary": [
+        {
+          "key": "marketing",
+          "value": "product"
+        },
+        {
+          "key": "audience",
+          "value": "practice-lead"
+        }
+      ],
+      "overlayLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no1",
+      "lang": "en",
+      "country": "us",
+      "origin": "dme-partners"
+    },
+    {
+      "id": "22f68eb0-a9ce-5501-b4e2-7e9553b23c39",
+      "showCard": {
+        "from": "",
+        "until": ""
+      },
+      "styles": {
+        "typeOverride": "default",
+        "backgroundImage": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/media_17e7090b334966ec40f5d3a198638e2b7eb6d6b91.jpeg",
+        "backgroundAltText": "Automation regression announcements card Worldwide no4",
+        "mnemonic": "",
+        "icon": "",
+        "iconAlt": ""
+      },
+      "overlays": {
+        "banner": {
+          "backgroundColor": "#EAEAEA",
+          "fontColor": "#323232",
+          "description": "",
+          "icon": ""
+        },
+        "logo": {
+          "src": ""
+        },
+        "label": {
+          "description": ""
+        },
+        "videoButton": {
+          "url": ""
+        }
+      },
+      "tags": [
+        {
+          "id": "caas:adobe-partners/qa-content"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/partner-level/public"
+        },
+        {
+          "id": "caas:adobe-partners/cpp"
+        },
+        {
+          "id": "caas:adobe-partners/collections/announcements"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/region/worldwide"
+        }
+      ],
+      "contentArea": {
+        "detailText": "",
+        "title": "Automation regression announcements card Worldwide no4",
+        "url": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no4",
+        "description": "Description of the Automation regression announcements card Worldwide no4 card.Created within LAST 90 DAYS.",
+        "dateDetailText": {
+          "type": "date-interval",
+          "startTime": "",
+          "endTime": ""
+        }
+      },
+      "footer": [
+        {
+          "divider": false,
+          "left": [
+            {
+              "type": "bookmark",
+              "saveCardIcon": "",
+              "unsaveCardIcon": "",
+              "cardSaveText": "",
+              "unsaveCardText": ""
+            }
+          ],
+          "center": [],
+          "right": [
+            {
+              "type": "button",
+              "style": "",
+              "text": "Read now",
+              "href": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no4"
+            }
+          ]
+        }
+      ],
+      "search": {
+        "key": "audience"
+      },
+      "cardDate": "2024-07-31T22:00:00.000Z",
+      "createdDate": "2024-07-31T22:00:00.000Z",
+      "modifiedDate": "2024-08-01T13:04:06.000Z",
+      "startDate": "",
+      "endDate": "",
+      "ctaLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no4",
+      "arbitrary": [
+        {
+          "key": "marketing",
+          "value": "solutions"
+        },
+        {
+          "key": "audience",
+          "value": "technical"
+        }
+      ],
+      "overlayLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no4",
+      "lang": "en",
+      "country": "us",
+      "origin": "dme-partners"
+    },
+    {
+      "id": "cd0cd83d-7bf0-5224-a7f3-fe5aeb257875",
+      "showCard": {
+        "from": "",
+        "until": ""
+      },
+      "styles": {
+        "typeOverride": "default",
+        "backgroundImage": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/media_17e7090b334966ec40f5d3a198638e2b7eb6d6b91.jpeg",
+        "backgroundAltText": "Automation regression announcements card Worldwide no2",
+        "mnemonic": "",
+        "icon": "",
+        "iconAlt": ""
+      },
+      "overlays": {
+        "banner": {
+          "backgroundColor": "#EAEAEA",
+          "fontColor": "#323232",
+          "description": "",
+          "icon": ""
+        },
+        "logo": {
+          "src": ""
+        },
+        "label": {
+          "description": ""
+        },
+        "videoButton": {
+          "url": ""
+        }
+      },
+      "tags": [
+        {
+          "id": "caas:adobe-partners/qa-content"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/partner-level/public"
+        },
+        {
+          "id": "caas:adobe-partners/cpp"
+        },
+        {
+          "id": "caas:adobe-partners/collections/announcements"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/region/worldwide"
+        }
+      ],
+      "contentArea": {
+        "detailText": "",
+        "title": "Automation regression announcements card Worldwide no2",
+        "url": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no2",
+        "description": "Description of the Automation regression announcements card Worldwide no2 card.",
+        "dateDetailText": {
+          "type": "date-interval",
+          "startTime": "",
+          "endTime": ""
+        }
+      },
+      "footer": [
+        {
+          "divider": false,
+          "left": [
+            {
+              "type": "bookmark",
+              "saveCardIcon": "",
+              "unsaveCardIcon": "",
+              "cardSaveText": "",
+              "unsaveCardText": ""
+            }
+          ],
+          "center": [],
+          "right": [
+            {
+              "type": "button",
+              "style": "",
+              "text": "Read now",
+              "href": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no2"
+            }
+          ]
+        }
+      ],
+      "search": {
+        "key": "audience"
+      },
+      "cardDate": "2034-07-01T22:00:00.000Z",
+      "createdDate": "2034-07-01T22:00:00.000Z",
+      "modifiedDate": "2024-08-01T13:02:10.000Z",
+      "startDate": "",
+      "endDate": "",
+      "ctaLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no2",
+      "arbitrary": [
+        {
+          "key": "marketing",
+          "value": "product"
+        },
+        {
+          "key": "audience",
+          "value": "sales"
+        }
+      ],
+      "overlayLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no2",
+      "lang": "en",
+      "country": "us",
+      "origin": "dme-partners"
+    },
+    {
+      "id": "bdcc0558-3ddd-5d94-b4da-495de622ca30",
+      "showCard": {
+        "from": "",
+        "until": ""
+      },
+      "styles": {
+        "typeOverride": "default",
+        "backgroundImage": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/media_17e7090b334966ec40f5d3a198638e2b7eb6d6b91.jpeg",
+        "backgroundAltText": "Automation regression announcements card Worldwide no3",
+        "mnemonic": "",
+        "icon": "",
+        "iconAlt": ""
+      },
+      "overlays": {
+        "banner": {
+          "backgroundColor": "#EAEAEA",
+          "fontColor": "#323232",
+          "description": "",
+          "icon": ""
+        },
+        "logo": {
+          "src": ""
+        },
+        "label": {
+          "description": ""
+        },
+        "videoButton": {
+          "url": ""
+        }
+      },
+      "tags": [
+        {
+          "id": "caas:adobe-partners/qa-content"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/partner-level/public"
+        },
+        {
+          "id": "caas:adobe-partners/cpp"
+        },
+        {
+          "id": "caas:adobe-partners/collections/announcements"
+        },
+        {
+          "id": "caas:adobe-partners/cpp/region/worldwide"
+        }
+      ],
+      "contentArea": {
+        "detailText": "",
+        "title": "Automation regression announcements card Worldwide no3",
+        "url": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no3",
+        "description": "\n              Description of the Automation regression announcements card Worldwide no3 card. Description of the Automation regression announcements card Worldwide no3 card.\n   …",
+        "dateDetailText": {
+          "type": "date-interval",
+          "startTime": "",
+          "endTime": ""
+        }
+      },
+      "footer": [
+        {
+          "divider": false,
+          "left": [
+            {
+              "type": "bookmark",
+              "saveCardIcon": "",
+              "unsaveCardIcon": "",
+              "cardSaveText": "",
+              "unsaveCardText": ""
+            }
+          ],
+          "center": [],
+          "right": [
+            {
+              "type": "button",
+              "style": "",
+              "text": "Read now",
+              "href": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no3"
+            }
+          ]
+        }
+      ],
+      "search": {
+        "key": "audience"
+      },
+      "cardDate": "2034-07-02T22:00:00.000Z",
+      "createdDate": "2034-07-02T22:00:00.000Z",
+      "modifiedDate": "2024-08-01T13:03:15.000Z",
+      "startDate": "",
+      "endDate": "",
+      "ctaLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no3",
+      "arbitrary": [
+        {
+          "key": "marketing",
+          "value": "advertising-cloud"
+        },
+        {
+          "key": "audience",
+          "value": "technical"
+        }
+      ],
+      "overlayLink": "https://main--dme-partners--adobecom.hlx.live/channelpartners/drafts/automation/regression/Cards/cpp-worldwide-no3",
+      "lang": "en",
+      "country": "us",
+      "origin": "dme-partners"
+    }
+  ],
+  "filters": [],
+  "debug": [
+    {
+      "missingIds": []
+    }
+  ],
+  "isHashed": false
+}
