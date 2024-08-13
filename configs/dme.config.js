@@ -37,7 +37,9 @@ const config = {
     actionTimeout: 60000,
 
     trace: 'on-first-retry',
-    baseURL: process.env.PR_BRANCH_LIVE_URL_GH ? process.env.PR_BRANCH_LIVE_URL_GH : envs['@dme_stage'],
+    baseURL: process.env.PR_BRANCH_LIVE_URL_GH
+      && !process.env.PR_BRANCH_LIVE_URL_GH.includes('stage--dme-partners')
+      ? process.env.PR_BRANCH_LIVE_URL_GH : envs['@dme_stage'],
   },
 
   /* Configure projects for major browsers */

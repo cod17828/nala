@@ -24,37 +24,39 @@ test.describe('Validate announcements block', () => {
     console.log('ssss', process.env.PR_BRANCH_LIVE_URL_GH);
     page.on('console', msg => console.log(msg.text()));
     console.log('before', new Date(), baseURL);
-    await page.goto(`${baseURL}${features[0].path}`);
-    console.log('after', new Date());
 
-    await page.evaluate(() => {
-      console.log('second', new Date());
-      if (document.querySelector('.card-title')) {
-        window.cardsLoaded = true;
-      } else {
-        document.addEventListener('partner-cards-loaded', () => {
-          window.cardsLoaded = true;
-          console.log('third');
-        });
-      }
+    if (baseURL.includes('partners.stage.adobe.com')) {
+      await page.goto(`${baseURL}${features[0].path}`);
+          console.log('after', new Date());
 
-    });
-    try {
-      await page.waitForFunction(() => {
-        return window.cardsLoaded;
+          await page.evaluate(() => {
+            console.log('second', new Date());
+            if (document.querySelector('.card-title')) {
+              window.cardsLoaded = true;
+            } else {
+              document.addEventListener('partner-cards-loaded', () => {
+                window.cardsLoaded = true;
+                console.log('third');
+              });
+            }
+
+          });
+          try {
+            await page.waitForFunction(() => {
+              return window.cardsLoaded;
+            });
+          } catch {
+            const result = await announcementsPage.resultNumber.textContent();
+            await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
+            console.log('catch block', result);
+          }
+    } else {
+      await page.route(chimeraApi, async route => {
+        const json = require('../../features/dme/announcments.json');
+        await route.fulfill({ json });
       });
-    } catch {
-      const result = await announcementsPage.resultNumber.textContent();
-      await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
-      console.log('catch block', result);
+      await page.goto(`${baseURL}${features[0].path}`);
     }
-
-
-//     await page.route(chimeraApi, async route => {
-//       const json = require('../../features/dme/announcments.json');
-//       await route.fulfill({ json });
-//     });
-//     await page.goto(`${baseURL}${features[0].path}`);
 
     const result = await announcementsPage.resultNumber.textContent();
     await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
