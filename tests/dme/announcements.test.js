@@ -5,7 +5,7 @@ import SignInPage from '../../selectors/dme/signin.page.js';
 let announcementsPage;
 let singInPage;
 const Announcements = require('../../features/dme/announcements.spec.js');
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 
 const { features } = Announcements;
 const regionCases = features.slice(6, 18);
