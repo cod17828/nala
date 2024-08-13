@@ -5,6 +5,7 @@ import SignInPage from '../../selectors/dme/signin.page.js';
 let announcementsPage;
 let singInPage;
 const Announcements = require('../../features/dme/announcements.spec.js');
+const fetch = require('node-fetch');
 
 const { features } = Announcements;
 const regionCases = features.slice(6, 18);
@@ -52,8 +53,16 @@ test.describe('Validate announcements block', () => {
           }
     } else {
       await page.route(chimeraApi, async route => {
-        const json = require('../../features/dme/announcments.json');
-        await route.fulfill({ json });
+        const localJson = require('../../features/dme/announcments.json');
+//         await route.fulfill({ json });
+        const response = await fetch('https://14257-chimera.adobeioruntime.net/api/v1/web/chimera-0.0.1/*');
+         const json = await response.json();
+         console.log('json', json);
+
+          await route.fulfill({
+              contentType: 'application/json',
+              body: JSON.stringify(json),
+          });
       });
       await page.goto(`${baseURL}${features[0].path}`);
     }
