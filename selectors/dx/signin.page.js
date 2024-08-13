@@ -27,23 +27,23 @@ export default class SignInPage {
     await this.passwordPageContinueButton.click();
   }
 
-  async verifyLandingPageAfterLogin({
-    page, partnerLevel, status, expectedLandingPageURL, test, expect, path,
-  }) {
-    await test.step('Go to public home page', async () => {
-      await page.goto(path);
-      await page.waitForLoadState('domcontentloaded');
-      await this.signInButton.click();
-    });
+  async verifyLandingPageAfterLogin({ page, expect, path, partnerLevel, expectedLandingPageURL }) {
+    await page.goto(path);
+    await page.waitForLoadState('domcontentloaded');
+    await this.signInButton.click();
+    await this.signIn(page, partnerLevel);
+    await this.profileIconButton.waitFor({ state: 'visible', timeout: 20000 });
+    const pages = await page.context().pages();
+    await expect(pages[0].url()).toContain(expectedLandingPageURL);
+  }
 
-    await test.step('Sign in', async () => {
-      await this.signIn(page, partnerLevel);
-    });
-
-    await test.step(`Verify redirection to ${status} page after successful login`, async () => {
-      await this.profileIconButton.waitFor({ state: 'visible', timeout: 20000 });
-      const pages = await page.context().pages();
-      await expect(pages[0].url()).toContain(expectedLandingPageURL);
-    });
+  async addCookie(partnerPortal, partnerLevel, page, context) {
+    this.context = context;
+    await this.context.addCookies([{
+      name: 'partner_data',
+      value: `{"${partnerPortal}":{"company":"Company"%2C"firstName":"Name"%2C"lastName"`
+        + `:"LastName"%2C"level":"${partnerLevel}"%2C"status":"MEMBER"}}`,
+      url: page,
+    }]);
   }
 }
