@@ -43,7 +43,9 @@ test.describe('Validate announcements block', () => {
         return window.cardsLoaded;
       });
     } catch {
-      console.log('catch block');
+      const result = await announcementsPage.resultNumber.textContent();
+      await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
+      console.log('catch block', result);
     }
 
 
