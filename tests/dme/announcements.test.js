@@ -38,7 +38,6 @@ test.describe('Validate announcements block', () => {
       }
 
     });
-    console.log('announcementsPage', await announcementsPage.resultNumber.textContent());
     try {
       await page.waitForFunction(() => {
         return window.cardsLoaded;
