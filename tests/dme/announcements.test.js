@@ -26,7 +26,7 @@ test.describe('Validate announcements block', () => {
     page.on('console', msg => console.log(msg.text()));
     console.log('before', new Date(), baseURL);
 
-    if (baseURL.includes('partners.stage.adobe.com')) {
+//     if (baseURL.includes('partners.stage.adobe.com')) {
       await page.goto(`${baseURL}${features[0].path}`);
           console.log('after', new Date());
 
@@ -51,21 +51,21 @@ test.describe('Validate announcements block', () => {
             await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
             console.log('catch block', result);
           }
-    } else {
-      await page.route(chimeraApi, async route => {
-        const localJson = require('../../features/dme/announcments.json');
-//         await route.fulfill({ json });
-        const response = await fetch('https://14257-chimera.adobeioruntime.net/api/v1/web/chimera-0.0.1/*');
-         const json = await response.json();
-         console.log('json', json);
-
-          await route.fulfill({
-              contentType: 'application/json',
-              body: JSON.stringify(json),
-          });
-      });
-      await page.goto(`${baseURL}${features[0].path}`);
-    }
+//     } else {
+//       await page.route(chimeraApi, async route => {
+//         const localJson = require('../../features/dme/announcments.json');
+// //         await route.fulfill({ json });
+//         const response = await fetch('https://14257-chimera.adobeioruntime.net/api/v1/web/chimera-0.0.1/*');
+//          const json = await response.json();
+//          console.log('json', json);
+//
+//           await route.fulfill({
+//               contentType: 'application/json',
+//               body: JSON.stringify(json),
+//           });
+//       });
+//       await page.goto(`${baseURL}${features[0].path}`);
+//     }
 
     const result = await announcementsPage.resultNumber.textContent();
     await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
