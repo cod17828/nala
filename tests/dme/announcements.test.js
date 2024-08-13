@@ -21,6 +21,7 @@ test.describe('Validate announcements block', () => {
   test(`${features[0].name},${features[0].tags}`, async ({ page, baseURL }) => {
     const { data } = features[0];
     await test.step('Go to Announcements page', async () => {
+    console.log('ssss', process.env.PR_BRANCH_LIVE_URL_GH);
     page.on('console', msg => console.log(msg.text()));
     console.log('before', new Date(), baseURL);
     await page.goto(`${baseURL}${features[0].path}`);

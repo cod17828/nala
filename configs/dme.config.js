@@ -37,7 +37,6 @@ const config = {
     actionTimeout: 60000,
 
     trace: 'on-first-retry',
-//     baseURL: 'https://tijana-test--dme-partners--adobecom.hlx.live',
     baseURL: process.env.PR_BRANCH_LIVE_URL_GH ? process.env.PR_BRANCH_LIVE_URL_GH : envs['@dme_stage'],
   },
 
