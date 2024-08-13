@@ -47,7 +47,13 @@ const config = {
   projects: [
     {
       name: 'dme-live-chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        bypassCSP: true,
+        launchOptions: {
+          args: ['--disable-web-security', '--disable-gpu'],
+        },
+      },
     },
 
 //     {
