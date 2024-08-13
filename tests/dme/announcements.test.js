@@ -22,7 +22,7 @@ test.describe('Validate announcements block', () => {
     const { data } = features[0];
     await test.step('Go to Announcements page', async () => {
     page.on('console', msg => console.log(msg.text()));
-    console.log('before', new Date());
+    console.log('before', new Date(), baseURL);
     await page.goto(`${baseURL}${features[0].path}`);
     console.log('after', new Date());
 

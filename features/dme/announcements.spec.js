@@ -5,7 +5,7 @@ module.exports = {
       tcid: '1',
       name: '@desc-regression-announcements-page-search',
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
-      tags: '@dme-announcements @regression @anonymous',
+      tags: '@dme-announcements @regression @anonymous @login',
       data: {
         numberOfPublicCards: 7,
         numberOfMatchingDescCards: 6,

@@ -37,10 +37,8 @@ const config = {
     actionTimeout: 60000,
 
     trace: 'on-first-retry',
-    baseURL: 'https://tijana-test--dme-partners--adobecom.hlx.live',
-//     baseURL: process.env.PR_BRANCH_LIVE_URL_GH
-//       && !process.env.PR_BRANCH_LIVE_URL_GH.includes('stage--dme-partners')
-//       ? process.env.PR_BRANCH_LIVE_URL_GH : envs['@dme_stage'],
+//     baseURL: 'https://tijana-test--dme-partners--adobecom.hlx.live',
+    baseURL: process.env.PR_BRANCH_LIVE_URL_GH ? process.env.PR_BRANCH_LIVE_URL_GH : envs['@dme_stage'],
   },
 
   /* Configure projects for major browsers */
@@ -56,15 +54,15 @@ const config = {
       },
     },
 
-//     {
-//       name: 'dme-live-firefox',
-//       use: { ...devices['Desktop Firefox'] },
-//     },
-//
-//     {
-//       name: 'dme-live-webkit',
-//       use: { ...devices['Desktop Safari'] },
-//     },
+    {
+      name: 'dme-live-firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+
+    {
+      name: 'dme-live-webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
   ],
 };
 module.exports = config;
