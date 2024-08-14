@@ -1,11 +1,7 @@
 // @ts-check
 const { devices } = require('@playwright/test');
 
-
 const envs = require('../envs/envs.js');
-require('dotenv').config();
-
-console.log('process.env', process.env);
 
 /**
  * @see https://playwright.dev/docs/test-configuration
