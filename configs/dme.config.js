@@ -1,7 +1,11 @@
 // @ts-check
 const { devices } = require('@playwright/test');
 
+
 const envs = require('../envs/envs.js');
+require('dotenv').config();
+
+console.log('process.env', process.env);
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -37,7 +41,7 @@ const config = {
     actionTimeout: 60000,
 
     trace: 'on-first-retry',
-    baseURL: 'https://tijana-test--dme-partners--adobecom.hlx.page',
+    baseURL: 'https://tijana-test--dme-partners--adobecom.hlx.live',
     //     baseURL: process.env.PR_BRANCH_LIVE_URL_GH
     //       && !process.env.PR_BRANCH_LIVE_URL_GH.includes('stage--dme-partners')
     //       ? process.env.PR_BRANCH_LIVE_URL_GH : envs['@dme_stage'],
