@@ -41,8 +41,7 @@ const config = {
     //     baseURL: process.env.PR_BRANCH_LIVE_URL_GH
     //       && !process.env.PR_BRANCH_LIVE_URL_GH.includes('stage--dme-partners')
     //       ? process.env.PR_BRANCH_LIVE_URL_GH : envs['@dme_stage'],
-    extraHTTPHeaders: {authorization: `token ${process.env.HLX_API_KEY}`,
-    },
+    extraHTTPHeaders: { authorization: `token ${process.env.HLX_API_KEY}` },
   },
 
   /* Configure projects for major browsers */
