@@ -29,8 +29,8 @@ test.describe('Validate announcements block', () => {
   test(`${features[0].name},${features[0].tags}`, async ({ page, baseURL }) => {
     const { data } = features[0];
     await test.step('Go to Announcements page', async () => {
-    page.on('console', msg => console.log(msg.text()));
-    console.log('before', new Date(), baseURL);
+      page.on('console', msg => console.log(msg.text()));
+      console.log('before', new Date(), baseURL);
 
       await page.goto(`${baseURL}${features[0].path}`);
           console.log('after', new Date());
@@ -57,9 +57,8 @@ test.describe('Validate announcements block', () => {
             console.log('catch block', result);
           }
 
-    const result = await announcementsPage.resultNumber.textContent();
-    await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
-
+      const result = await announcementsPage.resultNumber.textContent();
+      await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfPublicCards);
     });
 
     await test.step('Enter Automation regression announcements card worldwide no1 in search field', async () => {
