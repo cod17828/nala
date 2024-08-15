@@ -109,9 +109,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Distributor',
-        permissionRegion: 'North America',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Distributor',
+          permissionRegion: 'North America',
+        },
         announcementCardTitle: 'CPP Distributor North America Announcement',
         numberOfMatchingTitleCards: 1,
       },
@@ -122,9 +124,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Distributor',
-        permissionRegion: 'Japan',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Distributor',
+          permissionRegion: 'Japan',
+        },
         announcementCardTitle: 'CPP Distributor Japan Announcement',
         numberOfMatchingTitleCards: 1,
       },
@@ -135,9 +139,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Distributor',
-        permissionRegion: 'Asia Pacific',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Distributor',
+          permissionRegion: 'Asia Pacific',
+        },
         announcementCardTitle: 'CPP Distributor India Announcement',
         numberOfMatchingTitleCards: 1,
       },
@@ -148,9 +154,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Platinum',
-        permissionRegion: 'Europe West',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Platinum',
+          permissionRegion: 'Europe West',
+        },
         announcementCardTitle: 'CPP Platinum Spain Announcement',
         numberOfMatchingTitleCards: 1,
       },
@@ -161,9 +169,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Platinum',
-        permissionRegion: 'Latin America NA based',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Platinum',
+          permissionRegion: 'Latin America NA based',
+        },
         announcementCardTitle: 'CPP Platinum Latin America-North America based Announcement',
         numberOfMatchingTitleCards: 1,
       },
@@ -174,9 +184,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Platinum',
-        permissionRegion: 'EMEA',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Platinum',
+          permissionRegion: 'EMEA',
+        },
         announcementCardTitle: 'CPP Platinum EMEA Announcement',
         numberOfMatchingTitleCards: 1,
       },
@@ -187,9 +199,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Gold',
-        permissionRegion: 'Latin America',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Gold',
+          permissionRegion: 'Latin America',
+        },
         announcementCardTitle: 'CPP Gold Latin America Announcement',
         numberOfMatchingTitleCards: 1,
       },
@@ -200,9 +214,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Gold',
-        permissionRegion: 'United Kingdom%2CEurope West',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Gold',
+          permissionRegion: 'United Kingdom%2CEurope West',
+        },
         announcementCardTitle: 'CPP Gold UK, Europe West Announcement',
         numberOfMatchingTitleCards: 1,
       },
@@ -213,9 +229,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Certified',
-        permissionRegion: 'Europe East',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Certified',
+          permissionRegion: 'Europe East',
+        },
         announcementCardTitle: 'CPP Certified Europe East Announcement',
         numberOfMatchingTitleCards: 1,
       },
@@ -226,9 +244,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Certified',
-        permissionRegion: 'Pacific',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Certified',
+          permissionRegion: 'Pacific',
+        },
         announcementCardTitle: 'CPP Certified Pacific Announcement',
         numberOfMatchingTitleCards: 1,
       },
@@ -239,9 +259,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Registered',
-        permissionRegion: 'China',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Registered',
+          permissionRegion: 'China',
+        },
         announcementCardTitle: 'CPP Registered China Announcement',
         numberOfMatchingTitleCards: 1,
       },
@@ -252,9 +274,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Registered',
-        permissionRegion: 'Middle East and Africa',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Registered',
+          permissionRegion: 'Middle East and Africa',
+        },
         announcementCardTitle: 'CPP Registered Middle East & Africa Announcement',
         numberOfMatchingTitleCards: 1,
       },
@@ -265,9 +289,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Distributor',
-        permissionRegion: 'North America',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Distributor',
+          permissionRegion: 'North America',
+        },
         announcementCardTitle: 'Worldwide',
         numberOfMatchingTitleCardsNonLoggedIn: 6,
         numberOfMatchingTitleCardsLoggedIn: 0,
@@ -279,9 +305,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Platinum',
-        permissionRegion: 'Europe West',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Platinum',
+          permissionRegion: 'Europe West',
+        },
         platinumCardTitle: 'CPP Platinum Spain Announcement',
         totalNumberOfCards: 4,
         numberOfMatchingTitleCards: 1,
@@ -293,9 +321,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Gold',
-        permissionRegion: 'Latin America',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Gold',
+          permissionRegion: 'Latin America',
+        },
         higherPartnerLevelCardTitle: 'CPP Platinum Latin America Announcement',
         partnerLevelCardTitle: 'CPP Gold Latin America Announcement',
         totalNumberOfCards: 3,
@@ -309,9 +339,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Certified',
-        permissionRegion: 'Europe East',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Certified',
+          permissionRegion: 'Europe East',
+        },
         higherPartnerLevelCardTitle: 'CPP Gold Europe East Announcement',
         partnerLevelCardTitle: 'CPP Certified Europe East Announcement',
         totalNumberOfCards: 2,
@@ -325,9 +357,11 @@ module.exports = {
       path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
-        partnerPortal: 'CPP',
-        partnerLevel: 'Registered',
-        permissionRegion: 'China',
+        partnerData: {
+          partnerPortal: 'CPP',
+          partnerLevel: 'Registered',
+          permissionRegion: 'China',
+        },
         higherPartnerLevelCardTitle: 'CPP Certified China Announcement',
         partnerLevelCardTitle: 'CPP Registered China Announcement',
         totalNumberOfCards: 1,
