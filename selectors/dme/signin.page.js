@@ -52,12 +52,13 @@ export default class SignInPage {
         .toContain(`${feature.data.expectedToSeeInURL}`);
   }
 
-  async addCookie(partnerPortal, partnerLevel, permissionRegion, page, context) {
+  async addCookie(partnerData, page, context) {
     this.context = context;
     await this.context.addCookies([{
       name: 'partner_data',
-      value: `{"${partnerPortal}":{"company":"Company"%2C"firstName":"Name"%2C"lastName":"LastName"%2C"level":`
-      + `"${partnerLevel}"%2C"permissionRegion":"${permissionRegion}"%2C"status":"MEMBER"}}`,
+      value: `{"${partnerData.partnerPortal}":{"company":"Company"%2C`
+      + `"firstName":"${partnerData.firstName ? partnerData.firstName : 'Name'}"%2C"lastName":"LastName"%2C`
+      + `"level":"${partnerData.partnerLevel}"%2C"permissionRegion":"${partnerData.permissionRegion}"%2C"status":"MEMBER"}}`,
       url: `${page}`,
     }]);
   }

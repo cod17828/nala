@@ -266,11 +266,9 @@ test.describe('Validate announcements block', () => {
         await page.goto(`${baseURL}${feature.path}`);
       });
 
-      await test.step('Sign in', async () => {
+      await test.step('Set partner_data cookie', async () => {
         await singInPage.addCookie(
-          feature.data.partnerPortal,
-          feature.data.partnerLevel,
-          feature.data.permissionRegion,
+          feature.data.partnerData,
           `${baseURL}${feature.path}`,
           context,
         );
@@ -301,11 +299,9 @@ test.describe('Validate announcements block', () => {
       await expect(parseInt(result.split(' ')[0], 10)).toBe(data.numberOfMatchingTitleCardsNonLoggedIn);
     });
 
-    await test.step('Sign in', async () => {
+    await test.step('Set partner_data cookie', async () => {
       await singInPage.addCookie(
-        data.partnerPortal,
-        data.partnerLevel,
-        data.permissionRegion,
+        data.partnerData,
         `${baseURL}${path}`,
         context,
       );
@@ -326,11 +322,9 @@ test.describe('Validate announcements block', () => {
       await page.goto(`${baseURL}${path}`);
     });
 
-    await test.step('Sign in', async () => {
+    await test.step('Set partner_data cookie', async () => {
       await singInPage.addCookie(
-        data.partnerPortal,
-        data.partnerLevel,
-        data.permissionRegion,
+        data.partnerData,
         `${baseURL}${path}`,
         context,
       );
@@ -353,11 +347,9 @@ test.describe('Validate announcements block', () => {
         await page.goto(`${baseURL}${feature.path}`);
       });
 
-      await test.step('Sign in', async () => {
+      await test.step('Set partner_data cookie', async () => {
         await singInPage.addCookie(
-          feature.data.partnerPortal,
-          feature.data.partnerLevel,
-          feature.data.permissionRegion,
+          feature.data.partnerData,
           `${baseURL}${feature.path}`,
           context,
         );
