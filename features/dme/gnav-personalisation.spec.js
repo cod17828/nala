@@ -4,13 +4,13 @@ module.exports = {
     {
       tcid: '1',
       name: '@desc-public-gnav',
-      path: '/channelpartners/drafts/automation/regression/public-page',
+      path: '/channelpartners/drafts/automation/regression/public-page?akamaiLocale=na',
       tags: '@dme-gnav @anonymous',
     },
     {
       tcid: '2',
       name: '@desc-loggedin-gnav-loaded-for-member-user',
-      path: '/channelpartners/drafts/automation/regression/public-page',
+      path: '/channelpartners/drafts/automation/regression/public-page?akamaiLocale=na',
       tags: '@dme-gnav @anonymous',
       data: {
         partnerData: {
@@ -23,7 +23,7 @@ module.exports = {
     {
       tcid: '3',
       name: '@desc-loggedin-gnav-not-loaded-for-non-member-user',
-      path: '/channelpartners/drafts/automation/regression/public-page',
+      path: '/channelpartners/drafts/automation/regression/public-page?akamaiLocale=na',
       tags: '@dme-gnav @anonymous',
       data: {
         partnerData: {
@@ -36,7 +36,7 @@ module.exports = {
     {
       tcid: '4',
       name: '@desc-personalisation-non-logged-in-user',
-      path: '/channelpartners/drafts/automation/regression/personalized-page',
+      path: '/channelpartners/drafts/automation/regression/personalized-page?akamaiLocale=na',
       tags: '@dme-gnav @personalisation @anonymous',
       data: {
         h3ElementId: 'partner-not-signed-in',
@@ -46,7 +46,7 @@ module.exports = {
     {
       tcid: '5',
       name: '@desc-personalisation-logged-in-non-member-user',
-      path: '/channelpartners/drafts/automation/regression/personalized-page',
+      path: '/channelpartners/drafts/automation/regression/personalized-page?akamaiLocale=na',
       tags: '@dme-gnav @personalisation @anonymous',
       data: {
         partnerData: {
@@ -61,7 +61,7 @@ module.exports = {
     {
       tcid: '6',
       name: '@desc-personalisation-logged-in-member-registered-user',
-      path: '/channelpartners/drafts/automation/regression/personalized-page',
+      path: '/channelpartners/drafts/automation/regression/personalized-page?akamaiLocale=na',
       tags: '@dme-gnav @personalisation @anonymous',
       data: {
         partnerData: {
@@ -80,7 +80,7 @@ module.exports = {
     {
       tcid: '7',
       name: '@desc-personalisation-logged-in-member-certified-user',
-      path: '/channelpartners/drafts/automation/regression/personalized-page',
+      path: '/channelpartners/drafts/automation/regression/personalized-page?akamaiLocale=na',
       tags: '@dme-gnav @personalisation @anonymous',
       data: {
         partnerData: {
@@ -99,7 +99,7 @@ module.exports = {
     {
       tcid: '8',
       name: '@desc-personalisation-logged-in-member-gold-user',
-      path: '/channelpartners/drafts/automation/regression/personalized-page',
+      path: '/channelpartners/drafts/automation/regression/personalized-page?akamaiLocale=na',
       tags: '@dme-gnav @personalisation @anonymous',
       data: {
         partnerData: {
@@ -120,7 +120,7 @@ module.exports = {
     {
       tcid: '9',
       name: '@desc-personalisation-logged-in-member-platinum-user-with-first-name',
-      path: '/channelpartners/drafts/automation/regression/personalized-page',
+      path: '/channelpartners/drafts/automation/regression/personalized-page?akamaiLocale=na',
       tags: '@dme-gnav @personalisation @anonymous',
       data: {
         partnerData: {
@@ -142,7 +142,7 @@ module.exports = {
     {
       tcid: '10',
       name: '@desc-personalisation-logged-in-member-platinum-user-without-first-name',
-      path: '/channelpartners/drafts/automation/regression/personalized-page',
+      path: '/channelpartners/drafts/automation/regression/personalized-page?akamaiLocale=na',
       tags: '@dme-gnav @personalisation @anonymous',
       data: {
         partnerData: {
@@ -165,7 +165,7 @@ module.exports = {
     {
       tcid: '11',
       name: '@desc-personalisation-logged-in-member-distributor-user',
-      path: '/channelpartners/drafts/automation/regression/personalized-page',
+      path: '/channelpartners/drafts/automation/regression/personalized-page?akamaiLocale=na',
       tags: '@dme-gnav @personalisation @anonymous',
       data: {
         partnerData: {
