@@ -32,7 +32,7 @@ module.exports = {
     {
       tcid: '3',
       name: '@desc-regression-announcements-page-pagination',
-      path: '/channelpartners/drafts/automation/regression/announcements-paginated',
+      path: '/channelpartners/drafts/automation/regression/announcements-paginated?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         numberOfPublicCards: 7,
@@ -48,7 +48,7 @@ module.exports = {
     {
       tcid: '4',
       name: '@desc-regression-announcements-page-filters',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         numberOfPublicCards: 7,
@@ -74,7 +74,7 @@ module.exports = {
     {
       tcid: '5',
       name: '@desc-regression-announcements-page-read-article',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         searchCardTitle: 'Automation regression announcements card worldwide no1',
@@ -85,7 +85,7 @@ module.exports = {
     {
       tcid: '6',
       name: '@desc-announcements-page-edge-cases',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         numberOfPublicCards: 7,
@@ -106,7 +106,7 @@ module.exports = {
     {
       tcid: '7',
       name: '@desc-regression-announcements-distributor-north-america',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -119,7 +119,7 @@ module.exports = {
     {
       tcid: '8',
       name: '@desc-regression-announcements-distributor-japan',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -132,7 +132,7 @@ module.exports = {
     {
       tcid: '9',
       name: '@desc-regression-announcements-distributor-india',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -145,7 +145,7 @@ module.exports = {
     {
       tcid: '10',
       name: '@desc-regression-announcements-platinum-spain',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -158,7 +158,7 @@ module.exports = {
     {
       tcid: '11',
       name: '@desc-regression-announcements-platinum-latin-america-na-based',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -171,7 +171,7 @@ module.exports = {
     {
       tcid: '12',
       name: '@desc-regression-announcements-platinum-emea',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -184,7 +184,7 @@ module.exports = {
     {
       tcid: '13',
       name: '@desc-regression-announcements-gold-latin-america',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -197,7 +197,7 @@ module.exports = {
     {
       tcid: '14',
       name: '@desc-regression-announcements-gold-uk-europe-west',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -210,7 +210,7 @@ module.exports = {
     {
       tcid: '15',
       name: '@desc-regression-announcements-certified-europe-east',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -223,7 +223,7 @@ module.exports = {
     {
       tcid: '16',
       name: '@desc-regression-announcements-certified-pacific',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -236,7 +236,7 @@ module.exports = {
     {
       tcid: '17',
       name: '@desc-regression-announcements-registered-china',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -249,7 +249,7 @@ module.exports = {
     {
       tcid: '18',
       name: '@desc-regression-announcements-registered-middle-east-and-africa',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -262,7 +262,7 @@ module.exports = {
     {
       tcid: '19',
       name: '@desc-regression-worldwide-cards-not-visible-for-logged-in-users',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -276,7 +276,7 @@ module.exports = {
     {
       tcid: '20',
       name: '@desc-regression-logged-in-platinum-user',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -290,7 +290,7 @@ module.exports = {
     {
       tcid: '21',
       name: '@desc-regression-logged-in-gold-user',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -306,7 +306,7 @@ module.exports = {
     {
       tcid: '22',
       name: '@desc-regression-logged-in-certified-user',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
@@ -322,7 +322,7 @@ module.exports = {
     {
       tcid: '23',
       name: '@desc-regression-logged-in-registered-user',
-      path: '/channelpartners/drafts/automation/regression/announcements',
+      path: '/channelpartners/drafts/automation/regression/announcements?akamaiLocale=na',
       tags: '@dme-announcements @regression @anonymous',
       data: {
         partnerPortal: 'CPP',
