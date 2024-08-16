@@ -57,7 +57,7 @@ export default class SignInPage {
     await this.context.addCookies([{
       name: 'partner_data',
       value: `{"${partnerData.partnerPortal}":{"company":"Company"%2C`
-      + `"firstName":"${partnerData.firstName ? partnerData.firstName : 'Name'}"%2C"lastName":"LastName"%2C`
+      + `"firstName":"${partnerData.firstName !== undefined && partnerData.firstName !== null ? partnerData.firstName : 'Name'}"%2C"lastName":"LastName"%2C`
       + `"level":"${partnerData.partnerLevel}"%2C"permissionRegion":"${partnerData.permissionRegion}"%2C"status":"MEMBER"}}`,
       url: `${page}`,
     }]);

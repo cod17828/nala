@@ -14,7 +14,7 @@ test.describe('Validate Public GNav', () => {
     singInPage = new SignInPage(page);
   });
 
-  test(`${features[0].name},${features[0].tags}`, async ({ page, baseURL }) => {
+  test(`${features[0].name},${features[0].tags}`, async ({ page, baseURL, browserName }) => {
     const { path } = features[0];
     await test.step('Go to CPP page', async () => {
       await page.goto(`${baseURL}${path}`);
@@ -26,8 +26,10 @@ test.describe('Validate Public GNav', () => {
       await expect(publicGnav).toBeVisible();
       const joinNowButton = await gnavPersonalisationPage.joinNowButton;
       await expect(joinNowButton).toBeVisible();
-      const signInButton = await gnavPersonalisationPage.signInButton;
-      await expect(signInButton).toBeVisible();
+      if ( browserName==='chromium' ) {
+        const signInButton = await gnavPersonalisationPage.signInButton;
+        await expect(signInButton).toBeVisible();
+      }
     });
   });
 

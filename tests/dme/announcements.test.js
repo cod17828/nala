@@ -14,37 +14,37 @@ test.describe('Validate announcements block', () => {
   test.beforeEach(async ({ page, browserName }) => {
     announcementsPage = new AnnouncementsPage(page);
     singInPage = new SignInPage(page);
-    if (browserName=='chromium') {
+    if (browserName === 'chromium') {
       await page.route('https://www.adobe.com/chimera-api/**', async (route, request) => {
-        const newUrl = request.url().replace('https://www.adobe.com/chimera-api', 'https://14257-chimera.adobeioruntime.net/api/v1/web/chimera-0.0.1');
+        const newUrl = request.url().replace(
+          'https://www.adobe.com/chimera-api',
+          'https://14257-chimera.adobeioruntime.net/api/v1/web/chimera-0.0.1',
+        );
         route.continue({ url: newUrl });
       });
     }
   });
 
   async function handleEvent(page) {
-     await page.evaluate(() => {
-        if (document.querySelector('.card-title')) {
+    await page.evaluate(() => {
+      if (document.querySelector('.card-title')) {
+        window.cardsLoaded = true;
+      } else {
+        document.addEventListener('partner-cards-loaded', () => {
           window.cardsLoaded = true;
-        } else {
-          document.addEventListener('partner-cards-loaded', () => {
-            window.cardsLoaded = true;
-          });
-        }
-     });
-     try {
-       await page.waitForFunction(() => {
-         return window.cardsLoaded;
-       });
-     } catch {
-       console.log('catch block');
-     }
+        });
+      }
+    });
+    try {
+      await page.waitForFunction(() => window.cardsLoaded);
+    } catch {
+      console.log('catch block');
+    }
   }
 
   test(`${features[0].name},${features[0].tags}`, async ({ page, baseURL }) => {
     const { data } = features[0];
     await test.step('Go to Announcements page', async () => {
-      page.on('console', msg => console.log(msg.text()));
       await page.goto(`${baseURL}${features[0].path}`);
       await handleEvent(page);
 
