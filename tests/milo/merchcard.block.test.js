@@ -7,14 +7,26 @@ let merchCard;
 const miloLibs = process.env.MILO_LIBS || '';
 
 test.describe('Milo Merchcard block test suite', () => {
-  test.beforeEach(async ({ page }) => {
-    merchCard = new MerchCard(page);
+  test.beforeAll(async ({ baseURL }) => {
+    const excludedEnv = ['bacom', 'business'];
+
+    for (const env of excludedEnv) {
+      if (baseURL.includes(env)) {
+        test.skip(`Skipping the merchcard block tests for ${baseURL}`);
+        break;
+      }
+    }
   });
 
-  test.skip(({ browserName }) => browserName === 'chromium', 'Skipping tests for Chrome browser');
+  test.beforeEach(async ({ page, browserName }) => {
+    merchCard = new MerchCard(page);
+    if (browserName === 'chromium') {
+      await page.setExtraHTTPHeaders({ 'sec-ch-ua': '"Chromium";v="123", "Not:A-Brand";v="8"' });
+    }
+  });
 
   // Test 0 : Merch Card (Segment)
-  test(`${features[0].name},${features[0].tags}`, async ({ page, baseURL }) => {
+  test(`[Test Id - ${features[0].tcid}] ${features[0].name},${features[0].tags}`, async ({ page, baseURL }) => {
     console.info(`[Test Page]: ${baseURL}${features[0].path}${miloLibs}`);
     const { data } = features[0];
 
@@ -42,7 +54,7 @@ test.describe('Milo Merchcard block test suite', () => {
   });
 
   // Test 1 : Merch Card (Segment) with Badge
-  test(`${features[1].name},${features[1].tags}`, async ({ page, baseURL }) => {
+  test(`[Test Id - ${features[1].tcid}] ${features[1].name},${features[1].tags}`, async ({ page, baseURL }) => {
     console.info(`[Test Page]: ${baseURL}${features[1].path}${miloLibs}`);
     const { data } = features[1];
 
@@ -80,7 +92,7 @@ test.describe('Milo Merchcard block test suite', () => {
   });
 
   // Test 2 : Merch Card (Special Offers)
-  test(`${features[2].name},${features[2].tags}`, async ({ page, baseURL }) => {
+  test(`[Test Id - ${features[2].tcid}] ${features[2].name},${features[2].tags}`, async ({ page, baseURL }) => {
     console.info(`[Test Page]: ${baseURL}${features[2].path}${miloLibs}`);
     const { data } = features[2];
 
@@ -91,15 +103,15 @@ test.describe('Milo Merchcard block test suite', () => {
     });
 
     await test.step('step-2: Verify Merch Card special offers content/specs', async () => {
-      await expect(await merchCard.sepcialOffers).toBeVisible();
-      await expect(await merchCard.sepcialOffersImage).toBeVisible();
+      await expect(await merchCard.specialOffers).toBeVisible();
+      await expect(await merchCard.specialOffersImage).toBeVisible();
 
-      await expect(await merchCard.sepcialOffersTitleH4).toBeVisible();
-      await expect(await merchCard.sepcialOffersTitleH4).toContainText(data.titleH4);
-      await expect(await merchCard.sepcialOffersTitleH3).toContainText(data.titleH3);
+      await expect(await merchCard.specialOffersDetailM).toBeVisible();
+      await expect(await merchCard.specialOffersDetailM).toContainText(data.titleH4);
+      await expect(await merchCard.specialOffersTitleHeading).toContainText(data.titleH3);
 
-      await expect(await merchCard.sepcialOffersDescription1).toContainText(data.description1);
-      await expect(await merchCard.sepcialOffersDescription2).toContainText(data.description2);
+      await expect(await merchCard.specialOffersDescription1).toContainText(data.description1);
+      await expect(await merchCard.specialOffersDescription2).toContainText(data.description2);
 
       await expect(await merchCard.footer).toBeVisible();
       await expect(await merchCard.footerBlueButton).toBeVisible();
@@ -108,7 +120,7 @@ test.describe('Milo Merchcard block test suite', () => {
   });
 
   // Test 3 : Merch Card (Special Offers) with badge
-  test(`${features[3].name},${features[3].tags}`, async ({ page, baseURL }) => {
+  test(`[Test Id - ${features[3].tcid}] ${features[3].name},${features[3].tags}`, async ({ page, baseURL }) => {
     console.info(`[Test Page]: ${baseURL}${features[3].path}${miloLibs}`);
     const { data } = features[3];
 
@@ -119,16 +131,16 @@ test.describe('Milo Merchcard block test suite', () => {
     });
 
     await test.step('step-2: Verify Merch Card special offers content/specs', async () => {
-      await expect(await merchCard.sepcialOffers).toBeVisible();
-      await expect(await merchCard.sepcialOffersImage).toBeVisible();
+      await expect(await merchCard.specialOffers).toBeVisible();
+      await expect(await merchCard.specialOffersImage).toBeVisible();
 
-      await expect(await merchCard.sepcialOffersRibbon).toBeVisible();
-      await expect(await merchCard.sepcialOffersRibbon).toContainText(data.badgeText);
+      await expect(await merchCard.specialOffersRibbon).toBeVisible();
+      await expect(await merchCard.specialOffersRibbon).toContainText(data.badgeText);
 
-      await expect(await merchCard.sepcialOffersTitleH3).toContainText(data.titleH3);
-      await expect(await merchCard.sepcialOffersTitleH4).toContainText(data.titleH4);
+      await expect(await merchCard.specialOffersTitleHeading).toContainText(data.titleH3);
+      await expect(await merchCard.specialOffersDetailM).toContainText(data.titleH4);
 
-      await expect(await merchCard.sepcialOffersDescription1).toContainText(data.description);
+      await expect(await merchCard.specialOffersDescription1).toContainText(data.description);
       await expect(await merchCard.seeTermsTextLink).toContainText(data.link1Text);
 
       await expect(await merchCard.footer).toBeVisible();
@@ -140,7 +152,7 @@ test.describe('Milo Merchcard block test suite', () => {
     });
 
     await test.step('step-3: Verify Merch Card attributes', async () => {
-      await expect(await merchCard.sepcialOffersRibbon).toHaveAttribute(
+      await expect(await merchCard.specialOffersRibbon).toHaveAttribute(
         'style',
         merchCard.attributes.specialOfferRibbon.style,
       );
@@ -148,7 +160,7 @@ test.describe('Milo Merchcard block test suite', () => {
   });
 
   // Test 4 : Merch Card (plans)
-  test(`${features[4].name},${features[4].tags}`, async ({ page, baseURL }) => {
+  test(`[Test Id - ${features[4].tcid}] ${features[4].name},${features[4].tags}`, async ({ page, baseURL }) => {
     console.info(`[Test Page]: ${baseURL}${features[4].path}${miloLibs}`);
     const { data } = features[4];
 
@@ -162,8 +174,8 @@ test.describe('Milo Merchcard block test suite', () => {
       await expect(await merchCard.plans).toBeVisible();
       await expect(await merchCard.productIcon).toBeVisible();
 
-      await expect(await merchCard.plansCardTitleH3).toContainText(data.titleH3);
-      await expect(await merchCard.plansCardTitleH5).toContainText(data.titleH5);
+      await expect(await merchCard.plansCardTitleHeadingXS).toContainText(data.titleH3);
+      await expect(await merchCard.plansCardTitleBodyXXS).toContainText(data.titleH5);
 
       // await expect(await merchCard.price).toContainText(data.price);
       await expect(await merchCard.plansCardDescription1).toContainText(data.description);
@@ -177,7 +189,7 @@ test.describe('Milo Merchcard block test suite', () => {
   });
 
   // Test 5 : Merch Card (plans) with badge
-  test(`${features[5].name},${features[5].tags}`, async ({ page, baseURL }) => {
+  test(`[Test Id - ${features[5].tcid}] ${features[5].name},${features[5].tags}`, async ({ page, baseURL }) => {
     console.info(`[Test Page]: ${baseURL}${features[5].path}${miloLibs}`);
     const { data } = features[5];
 
@@ -194,8 +206,8 @@ test.describe('Milo Merchcard block test suite', () => {
       await expect(await merchCard.plansRibbon).toBeVisible();
       await expect(await merchCard.plansRibbon).toContainText(data.badgeText);
 
-      await expect(await merchCard.plansCardTitleH3).toContainText(data.titleH3);
-      await expect(await merchCard.plansCardTitleH4).toContainText(data.titleH4);
+      await expect(await merchCard.plansCardTitleHeadingXS).toContainText(data.titleH3);
+      await expect(await merchCard.plansCardTitleBodyXXS).toContainText(data.titleH4);
 
       // await expect(await merchCard.price).toContainText(data.price);
       await expect(await merchCard.plansCardDescription2).toContainText(data.description);
@@ -209,7 +221,7 @@ test.describe('Milo Merchcard block test suite', () => {
   });
 
   // Test 6 : Merch Card (plans) with secure
-  test(`${features[6].name},${features[6].tags}`, async ({ page, baseURL }) => {
+  test(`[Test Id - ${features[6].tcid}] ${features[6].name},${features[6].tags}`, async ({ page, baseURL }) => {
     console.info(`[Test Page]: ${baseURL}${features[6].path}${miloLibs}`);
     const { data } = features[6];
 
@@ -223,8 +235,8 @@ test.describe('Milo Merchcard block test suite', () => {
       await expect(await merchCard.plans).toBeVisible();
       await expect(await merchCard.productIcon).toBeVisible();
 
-      await expect(await merchCard.plansCardTitleH3).toContainText(data.titleH3);
-      await expect(await merchCard.plansCardTitleH5).toContainText(data.titleH5);
+      await expect(await merchCard.plansCardTitleHeadingXS).toContainText(data.titleH3);
+      await expect(await merchCard.plansCardTitleBodyXXS).toContainText(data.titleH5);
 
       // await expect(await merchCard.price).toContainText(data.price);
       await expect(await merchCard.plansCardDescription1).toContainText(data.description);
@@ -240,7 +252,7 @@ test.describe('Milo Merchcard block test suite', () => {
   });
 
   // Test 7 : Merch Card (plans, secure) with badge
-  test(`${features[7].name},${features[7].tags}`, async ({ page, baseURL }) => {
+  test(`[Test Id - ${features[7].tcid}] ${features[7].name},${features[7].tags}`, async ({ page, baseURL }) => {
     console.info(`[Test Page]: ${baseURL}${features[7].path}${miloLibs}`);
     const { data } = features[7];
 
@@ -257,8 +269,8 @@ test.describe('Milo Merchcard block test suite', () => {
       await expect(await merchCard.plansRibbon).toBeVisible();
       await expect(await merchCard.plansRibbon).toContainText(data.badgeText);
 
-      await expect(await merchCard.plansCardTitleH3).toContainText(data.titleH3);
-      await expect(await merchCard.plansCardTitleH5).toContainText(data.titleH5);
+      await expect(await merchCard.plansCardTitleHeadingXS).toContainText(data.titleH3);
+      await expect(await merchCard.plansCardTitleBodyXXS).toContainText(data.titleH5);
 
       // await expect(await merchCard.price).toContainText(data.price);
       await expect(await merchCard.plansCardDescription1).toContainText(data.description);
@@ -273,7 +285,7 @@ test.describe('Milo Merchcard block test suite', () => {
   });
 
   // Test 8 : Merch Card (catalog)
-  test(`${features[8].name},${features[8].tags}`, async ({ page, baseURL }) => {
+  test(`[Test Id - ${features[8].tcid}] ${features[8].name},${features[8].tags}`, async ({ page, baseURL }) => {
     console.info(`[Test Page]: ${baseURL}${features[8].path}${miloLibs}`);
     const { data } = features[8];
 
@@ -285,7 +297,7 @@ test.describe('Milo Merchcard block test suite', () => {
 
     await test.step('step-2: Verify Merch Card catalog content/specs', async () => {
       await expect(await merchCard.catalog).toBeVisible();
-      await expect(await merchCard.catalogCardTitleH3).toContainText(data.titleH3);
+      await expect(await merchCard.catalogCardTitleHeadingXS).toContainText(data.titleH3);
       await expect(await merchCard.catalogCardTitleH4).toContainText(data.titleH4);
 
       // await expect(await merchCard.price).toContainText(data.price);
@@ -305,7 +317,7 @@ test.describe('Milo Merchcard block test suite', () => {
   });
 
   // Test 9 : Merch Card (catalog) with badge
-  test(`${features[9].name},${features[9].tags}`, async ({ page, baseURL }) => {
+  test(`[Test Id - ${features[9].tcid}] ${features[9].name},${features[9].tags}`, async ({ page, baseURL }) => {
     console.info(`[Test Page]: ${baseURL}${features[9].path}${miloLibs}`);
     const { data } = features[9];
 
@@ -322,7 +334,7 @@ test.describe('Milo Merchcard block test suite', () => {
       await expect(await merchCard.catalog).toHaveAttribute('badge-color', data.badgeColor);
       await expect(await merchCard.catalog).toHaveAttribute('badge-text', data.badgeText);
 
-      await expect(await merchCard.catalogCardTitleH3).toContainText(data.titleH3);
+      await expect(await merchCard.catalogCardTitleHeadingXS).toContainText(data.titleH3);
       await expect(await merchCard.catalogCardTitleH4).toContainText(data.titleH4);
 
       // await expect(await merchCard.price).toContainText(data.price);
@@ -342,7 +354,7 @@ test.describe('Milo Merchcard block test suite', () => {
   });
 
   // Test 10 : Merch Card (catalog) with more info and badge
-  test(`${features[10].name},${features[10].tags}`, async ({ page, baseURL }) => {
+  test(`[Test Id - ${features[10].tcid}] ${features[10].name},${features[10].tags}`, async ({ page, baseURL }) => {
     console.info(`[Test Page]: ${baseURL}${features[10].path}${miloLibs}`);
     const { data } = features[10];
 
@@ -359,7 +371,7 @@ test.describe('Milo Merchcard block test suite', () => {
       await expect(await merchCard.catalog).toHaveAttribute('badge-color', data.badgeColor);
       await expect(await merchCard.catalog).toHaveAttribute('badge-text', data.badgeText);
 
-      await expect(await merchCard.catalogCardTitleH3).toContainText(data.titleH3);
+      await expect(await merchCard.catalogCardTitleHeadingXS).toContainText(data.titleH3);
       await expect(await merchCard.catalogCardTitleH4).toContainText(data.titleH4);
 
       // await expect(await merchCard.price).toContainText(data.price);
